@@ -72,7 +72,7 @@
 
         {% set country = form['country'] %}
         <div class="field country-field {% if country.errors %}field-error{% endif %}">
-          {{ form.country.label_tag(_('Country:')) }}
+          {{ form.country.label_tag(_('Country or Region:')) }}
           <div class="field-contents">
             {{ country }}
           </div>
