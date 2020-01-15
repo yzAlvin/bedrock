@@ -87,7 +87,7 @@ demo_app:
   except:
     - tags
   script:
-    - make clean build-ci
+    - make clean build-demo-ci
     - FROM_DOCKER_REPOSITORY=mozorg/bedrock_demo docker/bin/push2dockerhub.sh
     - docker/bin/push2dokku.sh
 
