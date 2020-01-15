@@ -10,6 +10,7 @@ echo "FROM mozorg/bedrock_demo:${GIT_COMMIT}" > Dockerfile
 git add Dockerfile
 git commit -m 'Add Dockerfile'
 
-ssh -t dokku@demos.moz.works -- apps:clone --ignore-existing --skip-deploy bedrock "$CI_ENVIRONMENT_SLUG"
-git push -f dokku@demos.moz.works:$CI_ENVIRONMENT_SLUG
-ssh -t dokku@demos.moz.works -- letsencrypt:auto-renew $CI_ENVIRONMENT_SLUG
+APP_NAME="www-${CI_COMMIT_REF_SLUG}"
+ssh -t dokku@demos.moz.works -- apps:clone --ignore-existing --skip-deploy bedrock "$APP_NAME"
+git push -f dokku@demos.moz.works:$APP_NAME master:refs/heads/master
+ssh -t dokku@demos.moz.works -- letsencrypt:auto-renew $APP_NAME
