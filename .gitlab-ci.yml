@@ -35,6 +35,14 @@ build-test:
     - FROM_DOCKER_REPOSITORY=mozorg/bedrock_test docker/bin/push2dockerhub.sh
     - FROM_DOCKER_REPOSITORY=mozorg/bedrock docker/bin/push2dockerhub.sh
 
+build-demo:
+  stage: build
+  only:
+    - "demo/.*"
+  script:
+    - mkdir output
+    - docker run -v `PWD`/output:/output mozmeao/combinedingress:0s "test" "80" "example.org" "demo1" "demo2" 
+
 .update-config:
   stage: update-config
   tags:
