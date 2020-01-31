@@ -43,7 +43,7 @@ build-demo:
     - oregon-b-shell
   script:
     - mkdir output
-    - docker run -v `PWD`/output:/output mozmeao/combinedingress:0s "test" "80" "example.org" "demo1" "demo2" 
+    - docker run -v $(pwd)/output:/output mozmeao/combinedingress:0 "test" "80" "example.org" "demo1" "demo2" 
 
 .update-config:
   stage: update-config
