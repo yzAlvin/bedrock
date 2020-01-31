@@ -38,7 +38,7 @@ build-test:
 build-demo:
   stage: build
   only:
-    - "/demo\/.*/"
+    - "/demo/.*/"
   script:
     - mkdir output
     - docker run -v `PWD`/output:/output mozmeao/combinedingress:0s "test" "80" "example.org" "demo1" "demo2" 
