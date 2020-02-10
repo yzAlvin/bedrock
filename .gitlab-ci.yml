@@ -35,16 +35,20 @@ build-test:
     - FROM_DOCKER_REPOSITORY=mozorg/bedrock_test docker/bin/push2dockerhub.sh
     - FROM_DOCKER_REPOSITORY=mozorg/bedrock docker/bin/push2dockerhub.sh
 
+include:
+  - remote: https://raw.githubusercontent.com/mozmeao/gitlab-library/master/ingress.yml
+
 build-demo:
+  extends: .combined-ingress
   stage: build
   only:
     - "/demo/.*/"
-  tags:
-    - oregon-b-shell
-  script:
-    - mkdir output
-    - docker run -v $(pwd)/output:/output mozmeao/combinedingress:0 "test" "80" "example.org" "demo1" "demo2"
-    - cat output/*
+  variables:
+    port: 80
+    branch_prefix: demo/
+    service: bedrock
+    domain: mozmar.org
+    staging: ''
 
 .update-config:
   stage: update-config
