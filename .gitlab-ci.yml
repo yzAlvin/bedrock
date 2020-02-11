@@ -45,10 +45,11 @@ build-demo:
     - "/demo/.*/"
   variables:
     port: 80
-    branch_prefix: demo/
     service: bedrock
     domain: mozmar.org
     staging: ''
+    dns_prefix: 'www'
+
 
 .update-config:
   stage: update-config
