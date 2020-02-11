@@ -48,7 +48,7 @@ build-demo:
     service: bedrock
     domain: mozmar.org
     staging: ''
-    dns_prefix: '--dns_prefix www'
+    dns_prefix: '--service_prefix www'
 
 
 .update-config:
