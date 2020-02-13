@@ -60,8 +60,8 @@ build-demo-deploy:
   script:
     - export KUBECONFIG=$EUKUBECONFIG
     - echo $CI_COMMIT_REF_SLUG
-#    - kubectl create namespace $CI_COMMIT_REF_SLUG || true
-#    - kubectl get secret bedrock-secrets --namespace=$old_namespace --export -o yaml | kubectl apply --namespace=$CI_COMMIT_REF_SLUG -f -
+    - kubectl create namespace $CI_COMMIT_REF_SLUG || true
+    - kubectl get secret bedrock-secrets --namespace=$old_namespace --export -o yaml | kubectl apply --namespace=$CI_COMMIT_REF_SLUG -f -
 
 .update-config:
   stage: update-config
