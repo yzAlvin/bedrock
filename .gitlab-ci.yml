@@ -60,6 +60,7 @@ build-demo-deploy:
   script:
     - export KUBECONFIG=$EUKUBECONFIG
     - echo $CI_COMMIT_REF_SLUG
+    - FROM_DOCKER_REPOSITORY=mozorg/bedrock_test docker/bin/push2dockerhub.sh
     - kubectl create namespace $CI_COMMIT_REF_SLUG || true
     - kubectl get secret bedrock-secrets --namespace=$old_namespace --export -o yaml | kubectl apply --namespace=$CI_COMMIT_REF_SLUG -f -
     - helm install bedrock mozmeao/bedrock --namespace $CI_COMMIT_REF_SLUG --set shared.image.version=master-$CI_COMMIT_SHA
