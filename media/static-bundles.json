@@ -664,12 +664,6 @@
     },
     {
       "files": [
-        "css/firefox/enterprise/sla.scss"
-      ],
-      "name": "firefox-enterprise-sla"
-    },
-    {
-      "files": [
         "css/firefox/releasenotes.scss"
       ],
       "name": "firefox_releasenotes"
@@ -746,13 +740,6 @@
         "css/exp/firefox/accounts-2019.scss"
       ],
       "name": "exp_firefox_accounts_2019"
-    },
-    {
-      "files": [
-        "css/base/mozilla-fxa-state.scss",
-        "css/firefox/concerts.scss"
-      ],
-      "name": "firefox_concert_series"
     },
     {
       "files": [
@@ -1102,10 +1089,11 @@
     },
     {
       "files": [
+        "js/base/mozilla-convert.js",
         "js/base/stub-attribution.js",
-        "js/base/stub-attribution-custom.js"
+        "js/base/stub-attribution-convert.js"
       ],
-      "name": "stub-attribution-custom"
+      "name": "stub-attribution-convert"
     },
     {
       "files": [
@@ -1348,16 +1336,6 @@
     },
     {
       "files": [
-        "protocol/js/protocol-modal.js",
-        "protocol/js/protocol-newsletter.js",
-        "js/newsletter/form-protocol.js",
-        "js/firefox/concerts.js",
-        "js/firefox/concerts-init.js"
-      ],
-      "name": "firefox_concert_series"
-    },
-    {
-      "files": [
         "js/base/mozilla-fxa-form.js",
         "js/base/mozilla-fxa-form-init.js"
       ],
@@ -1583,12 +1561,6 @@
         "js/firefox/enterprise/landing.js"
       ],
       "name": "firefox-enterprise"
-    },
-    {
-      "files": [
-        "js/firefox/enterprise/sla.js"
-      ],
-      "name": "firefox-enterprise-sla"
     },
     {
       "files": [

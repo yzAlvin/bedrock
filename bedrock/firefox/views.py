@@ -14,7 +14,6 @@ import querystringsafe_base64
 from django.conf import settings
 from django.http import (
     HttpResponsePermanentRedirect,
-    HttpResponseRedirect,
     JsonResponse,
 )
 from django.utils.cache import patch_response_headers
@@ -56,6 +55,7 @@ STUB_VALUE_NAMES = [
     ('utm_content', '(not set)'),
     ('experiment', '(not set)'),
     ('variation', '(not set)'),
+    ('ua', '(not set)'),
 ]
 STUB_VALUE_RE = re.compile(r'^[a-z0-9-.%():_]+$', flags=re.IGNORECASE)
 
@@ -860,13 +860,6 @@ def firefox_home(request):
     else:
         template_name = 'firefox/home/index-quantum.html'
     return l10n_utils.render(request, template_name)
-
-
-def firefox_concerts(request):
-    if switch('firefox_concert_series'):
-        return l10n_utils.render(request, 'firefox/concerts.html')
-    else:
-        return HttpResponseRedirect(reverse('firefox'))
 
 
 def firefox_accounts(request):
