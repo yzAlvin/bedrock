@@ -60,6 +60,7 @@ build-demo-deploy:
     secret_namespace: demo-shared-bedrock
   environment:
     on_stop: stop-demo-app
+    name: www-$CI_COMMIT_REF_NAME
   script:
     - export KUBECONFIG=$EUKUBECONFIG
     - echo $CI_COMMIT_REF_SLUG
@@ -80,6 +81,7 @@ stop-demo-app:
     GIT_STRATEGY: none
   environment:
     action: stop
+    name: www-$CI_COMMIT_REF_NAME
   when: manual
   script:
     - export KUBECONFIG=$EUKUBECONFIG
