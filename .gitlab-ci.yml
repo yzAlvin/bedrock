@@ -34,7 +34,7 @@ build-demo-deploy:
     - "make clean build-demo-ci"
     - "FROM_DOCKER_REPOSITORY=mozorg/bedrock_demo docker/bin/push2dockerhub.sh"
     - "kubectl create namespace $CI_COMMIT_REF_SLUG || true"
-    - "kubectl get secret bedrock-secrets --namespace=secret_namespace --export -o yaml | kubectl apply --namespace=$CI_COMMIT_REF_SLUG -f -"
+    - "kubectl get secret bedrock-secrets --namespace=$secret_namespace --export -o yaml | kubectl apply --namespace=$CI_COMMIT_REF_SLUG -f -"
     - "helm repo add mozmeao https://mozmeao.github.io/helm/"
     - "helm repo update"
     - "helm install bedrock mozmeao/bedrock --namespace $CI_COMMIT_REF_SLUG --set shared.image.version=$CI_COMMIT_SHA --set shared.image.dockerrepo=mozorg/bedrock_demo || true"
@@ -42,6 +42,7 @@ build-demo-deploy:
   stage: deploy
   variables:
     secret_namespace: demo-shared-bedrock
+
 build-demo-ingress:
   extends: .combined-ingress
   only:
