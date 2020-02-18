@@ -67,7 +67,7 @@ build-demo-deploy:
     - helm repo add mozmeao https://mozmeao.github.io/helm/
     - helm repo update
     - helm install bedrock mozmeao/bedrock --namespace $CI_COMMIT_REF_SLUG --set shared.image.version=$CI_COMMIT_SHA --set shared.image.dockerrepo=mozorg/bedrock_demo || true
-    - helm update bedrock mozmeao/bedrock --namespace $CI_COMMIT_REF_SLUG --set shared.image.version=$CI_COMMIT_SHA --set shared.image.dockerrepo=mozorg/bedrock_demo || true
+    - helm upgrade bedrock mozmeao/bedrock --namespace $CI_COMMIT_REF_SLUG --set shared.image.version=$CI_COMMIT_SHA --set shared.image.dockerrepo=mozorg/bedrock_demo || true
 
 .update-config:
   stage: update-config
