@@ -6,6 +6,7 @@ variables:
 stages:
   - build
   - update-config
+  - deploy
 
 build:
   stage: build
@@ -40,7 +41,7 @@ include:
 
 build-demo-ingress:
   extends: .combined-ingress
-  stage: build
+  stage: deploy
   only:
     - "/demo/.*/"
   variables:
@@ -52,22 +53,38 @@ build-demo-ingress:
 
 build-demo-deploy:
   extends: .base_job
-  stage: build
+  stage: deploy
   only:
     - "/demo/.*/"
   variables:
-    old_namespace: demo-shared-bedrock
+    secret_namespace: demo-shared-bedrock
+  environment:
+    on_stop: stop-demo-app
   script:
     - export KUBECONFIG=$EUKUBECONFIG
     - echo $CI_COMMIT_REF_SLUG
     - make clean build-demo-ci
     - FROM_DOCKER_REPOSITORY=mozorg/bedrock_demo docker/bin/push2dockerhub.sh
     - kubectl create namespace $CI_COMMIT_REF_SLUG || true
-    - kubectl get secret bedrock-secrets --namespace=$old_namespace --export -o yaml | kubectl apply --namespace=$CI_COMMIT_REF_SLUG -f -
+    - kubectl get secret bedrock-secrets --namespace=secret_namespace --export -o yaml | kubectl apply --namespace=$CI_COMMIT_REF_SLUG -f -
     - helm repo add mozmeao https://mozmeao.github.io/helm/
     - helm repo update
     - helm install bedrock mozmeao/bedrock --namespace $CI_COMMIT_REF_SLUG --set shared.image.version=$CI_COMMIT_SHA --set shared.image.dockerrepo=mozorg/bedrock_demo || true
     - helm upgrade bedrock mozmeao/bedrock --namespace $CI_COMMIT_REF_SLUG --set shared.image.version=$CI_COMMIT_SHA --set shared.image.dockerrepo=mozorg/bedrock_demo || true
+
+stop-demo-app:
+  stage: deploy
+  tags:
+    - oregon-b-shell
+  variables:
+    GIT_STRATEGY: none
+  environment:
+    action: stop
+  when: manual
+  script:
+    - export KUBECONFIG=$EUKUBECONFIG
+    - kubectl delete ns/$CI_COMMIT_REF_SLUG
+
 
 .update-config:
   stage: update-config
