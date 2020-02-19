@@ -1,4 +1,13 @@
 ---
+include:
+  - remote: "https://raw.githubusercontent.com/mozmeao/gitlab-library/master/ingress.yml"
+
+stages:
+  - build
+  - update-config
+  - deploy
+
+### Start Shared Jobs ###
 .update-config:
   script:
     - bin/update_config.sh
@@ -21,6 +30,9 @@ build:
   stage: build
   tags:
     - oregon-b-shell
+### End Shared Jobs ###
+
+### START DEMO PIPELINE ###
 build-demo-deploy:
   environment:
     name: www-$CI_COMMIT_REF_NAME
@@ -54,44 +66,9 @@ build-demo-ingress:
     port: 80
     service: bedrock
     staging: ""
-build-test:
-  only:
-    - run-integration-tests
-  script:
-    - "make clean build-ci"
-    - "FROM_DOCKER_REPOSITORY=mozorg/bedrock_test docker/bin/push2dockerhub.sh"
-    - "FROM_DOCKER_REPOSITORY=mozorg/bedrock docker/bin/push2dockerhub.sh"
-  stage: build
-  tags:
-    - oregon-b-shell
-dev:
-  extends: .update-config
-  only:
-    - master
-  variables:
-    NAMESPACE: bedrock-dev
-include:
-  -
-    remote: "https://raw.githubusercontent.com/mozmeao/gitlab-library/master/ingress.yml"
-prod:
-  extends: .update-config
-  only:
-    - prod
-  variables:
-    CLUSTERS: "frankfurt iowa-a"
-    NAMESPACE: bedrock-prod
-stage:
-  extends: .update-config
-  only:
-    - stage
-  variables:
-    CLUSTERS: iowa-a
-    NAMESPACE: bedrock-stage
-stages:
-  - build
-  - update-config
-  - deploy
+
 stop-demo-app:
+  extends: .base_job
   environment:
     action: stop
     name: www-$CI_COMMIT_REF_NAME
@@ -104,6 +81,42 @@ stop-demo-app:
   variables:
     GIT_STRATEGY: none
   when: manual
+### END DEMO PIPELINE ###
+
+build-test:
+  only:
+    - run-integration-tests
+  script:
+    - "make clean build-ci"
+    - "FROM_DOCKER_REPOSITORY=mozorg/bedrock_test docker/bin/push2dockerhub.sh"
+    - "FROM_DOCKER_REPOSITORY=mozorg/bedrock docker/bin/push2dockerhub.sh"
+  stage: build
+  tags:
+    - oregon-b-shell
+
+dev:
+  extends: .update-config
+  only:
+    - master
+  variables:
+    NAMESPACE: bedrock-dev
+
+stage:
+  extends: .update-config
+  only:
+    - stage
+  variables:
+    CLUSTERS: iowa-a
+    NAMESPACE: bedrock-stage
+
+prod:
+  extends: .update-config
+  only:
+    - prod
+  variables:
+    CLUSTERS: "frankfurt iowa-a"
+    NAMESPACE: bedrock-prod
+
 test:
   extends: .update-config
   only:
