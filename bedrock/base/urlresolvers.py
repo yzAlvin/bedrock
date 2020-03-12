@@ -27,7 +27,13 @@ def reverse(viewname, urlconf=None, args=None, kwargs=None, prefix=None):
 
     if prefixer:
         prefix = prefix or '/'
+
     url = django_reverse(viewname, urlconf, args, kwargs, prefix)
+    if url.startswith('/firefox/'):
+        url = url[9:]
+        url = f'https://www.firefox.com/{iri_to_uri(url)}'
+        return url
+
     if prefixer:
         url = prefixer.fix(url)
 

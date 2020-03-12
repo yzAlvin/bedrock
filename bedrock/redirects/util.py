@@ -196,6 +196,9 @@ def redirect(pattern, to, permanent=True, locale_prefix=True, anchor=None, name=
                 # Assume it's a URL
                 redirect_url = to_value
 
+        if redirect_url.startswith('/firefox/'):
+            redirect_url = f'https://www.firefox.com/{redirect_url[9:]}'
+
         if prepend_locale and redirect_url.startswith('/') and kwargs.get('locale'):
             redirect_url = '/{locale}' + redirect_url.lstrip('/')
 

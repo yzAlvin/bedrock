@@ -17,17 +17,9 @@ def firefox_channel(*args, **kwargs):
 
 
 redirectpatterns = (
+    # Redirect everything /firefox/ to firefox.com
+    redirect(r'^firefox/(?P<path>.+)$', 'https://www.firefox.com/{path}'),
     # overrides
-
-    # issue 8096
-    redirect(r'^firefox/beta/all/?$', 'firefox.all', anchor='product-desktop-beta'),
-    redirect(r'^firefox/developer/all/?$', 'firefox.all', anchor='product-desktop-developer'),
-    redirect(r'^firefox/aurora/all/?$', 'firefox.all', anchor='product-desktop-developer'),
-    redirect(r'^firefox/nightly/all/?$', 'firefox.all', anchor='product-desktop-nightly'),
-    redirect(r'^firefox/organizations/all/?$', 'firefox.all', anchor='product-desktop-esr'),
-    redirect(r'^firefox/android/all/?$', 'firefox.all', anchor='product-android-release'),
-    redirect(r'^firefox/android/beta/all/?$', 'firefox.all', anchor='product-android-beta'),
-    redirect(r'^firefox/android/nightly/all/?$', 'firefox.all', anchor='product-android-nightly'),
 
     # bug 831810 & 1142583 & 1239960, 1329931
     redirect(r'^mwc/?$', 'https://support.mozilla.org/products/firefox-os', re_flags='i'),
@@ -36,20 +28,11 @@ redirectpatterns = (
     redirect(r'^projects/firefox/[^/]+a[0-9]+/firstrun(?P<p>.*)$',
              '/firefox/nightly/firstrun{p}'),
 
-    # bug 1275483
-    redirect(r'^firefox/nightly/whatsnew/?', 'firefox.nightly_firstrun'),
-
     # bug 840814
     redirect(r'^projects/firefox'
              r'(?P<version>/(?:\d+\.\d+\.?(?:\d+)?\.?(?:\d+)?(?:[a|b]?)(?:\d*)(?:pre)?(?:\d)?))'
              r'(?P<page>/(?:firstrun|whatsnew))'
              r'(?P<rest>/.*)?$', '/firefox{version}{page}{rest}'),
-
-    # bug 877165
-    redirect(r'^firefox/connect', 'mozorg.home'),
-
-    # bug 657049, 1238851
-    redirect(r'^firefox/accountmanager/?$', 'https://developer.mozilla.org/Persona'),
 
     # Bug 1009247, 1101220, 1299947, 1314603, 1328409
     redirect(r'^(firefox/)?beta/?$', firefox_channel(), cache_timeout=0, anchor='beta'),
@@ -59,26 +42,12 @@ redirectpatterns = (
     redirect(r'^mobile/aurora/?$', 'firefox.channel.android', anchor='aurora'),
     redirect(r'^mobile/nightly/?$', 'firefox.channel.android', anchor='nightly'),
 
-    # bug 988044
-    redirect(r'^firefox/unsupported-systems\.html$', 'firefox.unsupported-systems'),
-
     # bug 736934, 860865, 1101220, 1153351
     redirect(r'^mobile/(?P<channel>(?:beta|aurora)/)?notes/?$',
              '/firefox/android/{channel}notes/'),
-    redirect(r'^firefox/(?P<channel>(?:beta|aurora|organizations)/)?system-requirements(\.html)?$',
-             '/firefox/{channel}system-requirements/'),
-
-    # bug 1155870
-    redirect(r'^firefox/os/(releases|notes)/?$',
-             'https://developer.mozilla.org/Firefox_OS/Releases'),
-    redirect(r'^firefox/os/(?:release)?notes/(?P<v>[^/]+)/?$',
-             'https://developer.mozilla.org/Firefox_OS/Releases/{v}'),
 
     # bug 878871
     redirect(r'^firefoxos', '/firefox/os/'),
-
-    # bug 1438302
-    no_redirect(r'^firefox/download/thanks/?$'),
 
     # Bug 1006616
     redirect(r'^download/?$', 'firefox.new'),

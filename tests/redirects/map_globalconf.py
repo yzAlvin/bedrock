@@ -106,7 +106,7 @@ URLS = flatten((
              'https://mozilla.github.io/python-nss-docs/random/stuff/'),
 
     # bug 780672
-    url_test('/firefox/webhero/random/stuff/', '/firefox/new/'),
+    url_test('/firefox/webhero/random/stuff/', 'https://www.firefox.com/new/'),
 
     # bug 964107
     url_test('/firefox/video/random/stuff/', 'https://www.youtube.com/firefoxchannel'),
