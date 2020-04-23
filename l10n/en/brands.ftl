@@ -18,6 +18,7 @@
 -brand-name-mozilla-foundation = Mozilla Foundation
 -brand-name-twitter = Twitter
 -brand-name-jeffry-lebowski = The Dude
+-brand-name-uli = Nihilist
 
 ## Firefox browsers
 
