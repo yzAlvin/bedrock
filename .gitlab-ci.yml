@@ -30,12 +30,11 @@ build-test:
   stage: build
   only:
     - run-integration-tests
+    - test-fluent-pr
   tags:
     - oregon-b-shell
   script:
     - make clean build-ci
-    - FROM_DOCKER_REPOSITORY=mozorg/bedrock_test docker/bin/push2dockerhub.sh
-    - FROM_DOCKER_REPOSITORY=mozorg/bedrock docker/bin/push2dockerhub.sh
 
 update-l10n:
   stage: update-config
@@ -45,10 +44,7 @@ update-l10n:
     changes:
       - "l10n/**/*"
     refs:
-      - master
-  except:
-    changes:
-      - "lib/fluent_migrations/**/*"
+      - test-fluent-pr
   script:
     - bin/open-ftl-pr.sh
 

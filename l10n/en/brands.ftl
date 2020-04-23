@@ -17,6 +17,7 @@
 -brand-name-mozilla-corporation = Mozilla Corporation
 -brand-name-mozilla-foundation = Mozilla Foundation
 -brand-name-twitter = Twitter
+-brand-name-jeffry-lebowski = The Dude
 
 ## Firefox browsers
 
