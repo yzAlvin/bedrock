@@ -19,6 +19,7 @@
 -brand-name-twitter = Twitter
 -brand-name-jeffry-lebowski = The Dude
 -brand-name-uli = Nihilist
+-brand-name-fawn-knutsen = Bunny Lebowski
 
 ## Firefox browsers
 
