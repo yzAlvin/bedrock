@@ -25,6 +25,7 @@ __all__ = [
 ]
 cache = caches['fluent']
 REQUIRED_RE = re.compile(r'^required\b', re.MULTILINE | re.IGNORECASE)
+TERM_RE = re.compile(r'\{\s*-[a-z-]+\s*\}')
 
 
 class FluentL10n(FluentLocalization):
@@ -92,6 +93,21 @@ class FluentL10n(FluentLocalization):
             return True
 
         return message_id in self._localized_message_ids
+
+
+class ExtraFluentResourceLoader(FluentResourceLoader):
+    """A resource loader that will add some extra Fluent strings"""
+
+    def __init__(self, roots, extra_ftl=None):
+        self._extra_ftl = extra_ftl
+        super().__init__(roots)
+
+    def resources(self, locale, resource_ids):
+        for resource_list in super().resources(locale, resource_ids):
+            if self._extra_ftl:
+                resource_list.append(self.Resource(self._extra_ftl))
+
+            yield resource_list
 
 
 def _cache_key(*args, **kwargs):
@@ -184,14 +200,14 @@ def ftl_file_is_active(ftl_file, locale=None):
 
 
 @memoize
-def fluent_l10n(locales, files):
+def fluent_l10n(locales, files, extra_ftl=None):
     if isinstance(locales, str):
         locales = [locales]
 
     # file IDs may not have file extension
     files = [f'{f}.ftl' if not f.endswith('.ftl') else f for f in files]
     paths = [f'{path}/{{locale}}/' for path in settings.FLUENT_PATHS]
-    loader = FluentResourceLoader(paths)
+    loader = ExtraFluentResourceLoader(paths, extra_ftl)
     return FluentL10n(locales, files, loader)
 
 
@@ -207,7 +223,13 @@ def translate(l10n, message_id, fallback=None, **kwargs):
     if fallback and not l10n.has_message(message_id):
         message_id = fallback
 
-    return l10n.format_value(message_id, kwargs)
+    message = l10n.format_value(message_id, kwargs)
+    if TERM_RE.search(message):
+        new_message_id = f'{message_id}-term-fix'
+        term_l10n = fluent_l10n(['en'], ['brands'], f'{new_message_id} = {message}')
+        message = term_l10n.format_value(new_message_id, kwargs)
+
+    return message
 
 
 # View Utils
