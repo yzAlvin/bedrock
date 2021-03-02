@@ -25,6 +25,7 @@ def get_client():
         client = api.Client(
             settings.CONTENTFUL_SPACE_ID,
             settings.CONTENTFUL_SPACE_KEY,
+            environment='V0',
             api_url=settings.CONTENTFUL_SPACE_API,
         )
 
@@ -106,6 +107,9 @@ class ContentfulFirefoxPage(ContentfulBase):
 
 
 class ContentfulHomePage(ContentfulBase):
+    renderer = RichTextRenderer({
+        'bold': StrongRenderer,
+    })
     client = None
     card_field_re = re.compile(r'card\d$')
     card_fields = [
@@ -167,14 +171,18 @@ class ContentfulHomePage(ContentfulBase):
     }
 
     def get_all_page_data(self):
-        pages = self.client.entries({'content_type': 'homepageEn'})
+        pages = self.client.entries({'content_type': 'pageGeneral'})
         return [self.get_page_data(p.id) for p in pages]
+
+    def get_entry_data(self, page_id):
+        entry_data = self.client.entry(page_id)
+        # print(entry_data.__dict__)
+        return entry_data
 
     def get_page_data(self, page_id):
         layouts = []
         page = self.client.entry(page_id, {'include': 5})
         page_data = {
-            'lang': page.language.lower(),
             'id': page.id,
             'content_type': page.content_type.id,
         }
@@ -183,7 +191,6 @@ class ContentfulHomePage(ContentfulBase):
             layout_data = {
                 'type': layout.content_type.id,
                 'class': self.card_layout_classes[layout.content_type.id],
-                'lang': page.language,
             }
             cards = self.get_layout_cards(layout)
             layout_data['cards'] = self.get_card_dicts(cards, layout_data['type'])
@@ -191,6 +198,28 @@ class ContentfulHomePage(ContentfulBase):
 
         page_data['layouts'] = layouts
         return page_data
+
+    def make_slug(self, url):
+        slug = url
+        # remove trailing slash
+        if slug.rfind('/') == (len(slug) - 1):
+            slug = slug[:-1]
+
+        #remove folder names
+        if slug.rfind('/') > -1:
+            slug = slug[(slug.rfind('/') + 1):]
+
+        return slug
+
+    def get_info_data(self, page_id):
+        page_obj = self.client.entry(page_id)
+        fields = page_obj.fields()
+        info_data = {
+            'title': fields['preview_title'],
+            'blurb': fields['preview_blurb'],
+            'slug': self.make_slug(fields['url']),
+        }
+        return info_data
 
     def get_page_layouts(self, page_obj):
         return [v for k, v in page_obj.fields().items() if k.startswith('card_group')]
@@ -238,6 +267,23 @@ class ContentfulHomePage(ContentfulBase):
                     card_data['media_icon'] = 'mzp-has-video'
 
         return card_data
+
+    def get_body(self, page_id):
+        page_obj = self.client.entry(page_id)
+        fields = page_obj.fields()
+        body = fields['body']
+        page_body = self.renderer.render(body)
+
+        return page_body
+
+    def get_hero_data(self, page_id):
+        page_obj = self.client.entry(page_id)
+        fields = page_obj.fields()
+        hero = fields['hero']
+        print(hero)
+        return hero.id
+
+
 
 
 contentful_home_page = ContentfulHomePage()

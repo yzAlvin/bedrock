@@ -15,9 +15,9 @@ def data_hash(data):
 
 
 class ContentfulEntryManager(models.Manager):
-    def get_homepage(self, lang):
+    def get_homepage(self):
         try:
-            return self.get(content_type='homepageEn', language=lang).data
+            return self.get(content_type='homepageEn').data
         except ContentfulEntry.DoesNotExist:
             return None
 
@@ -32,14 +32,14 @@ class ContentfulEntryManager(models.Manager):
                 self.create(
                     contentful_id=page['id'],
                     content_type=page['content_type'],
-                    language=page['lang'],
+                    language='en', #hardcode for now
                     data_hash=hash,
                     data=page,
                 )
                 added_count += 1
             else:
                 if force or hash != obj.data_hash:
-                    obj.language = page['lang']
+                    obj.language = 'en' #hardcode for now
                     obj.data_hash = hash
                     obj.data = page
                     obj.save()
@@ -58,5 +58,3 @@ class ContentfulEntry(models.Model):
 
     objects = ContentfulEntryManager()
 
-    class Meta:
-        unique_together = ('content_type', 'language')

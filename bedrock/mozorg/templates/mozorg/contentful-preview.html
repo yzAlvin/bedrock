@@ -1,0 +1,57 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% from "macros-protocol.html" import feature_card with context %}
+
+{% extends "firefox/base/base-protocol.html" %}
+
+{# analytics #}
+{#
+{% set _utm_source = 'mozilla.org-firefox-accounts' %}
+{% set _utm_campaign = 'trailhead' %}
+{% set referrals = '?utm_source=www.mozilla.org&utm_medium=referral&utm_campaign=firefox-unfck' %}
+
+  {% set show_send_to_device = LANG in settings.SEND_TO_DEVICE_LOCALES %}
+  {% set android_url = firefox_adjust_url('android', 'mobile-page') %}
+  {% set ios_url = firefox_adjust_url('ios', 'mobile-page') %}
+#}
+
+{# meta data #}
+{% block page_title %}{{ info.title }}{% endblock %}
+{% block page_desc %}{{ info.blurb }}{% endblock %}
+{% block page_og_title %}{{ info.title }}{% endblock %}
+{% block page_og_desc %}{{ info.blurb }}{% endblock %}
+
+{% block page_css %}{% endblock %}
+
+{% block body_class %}mzp-t-firefox wmo-contentful{% endblock %}
+
+{% block content %}
+
+
+<div class="mzp-l-content">
+
+  <p>
+    Entry Data:
+      {{ entry_data }}
+    <br>
+    Page Data:
+      {{ page_data }}
+    </p>
+  <p>
+  Title: {{ info.title }}<br>
+  Blurb: {{ info.blurb }}<br>
+  Slug: {{ info.slug }}<br>
+  Hero: {{ hero }}
+  </p>
+
+  <p>
+    {{ body|safe }}
+  </p>
+
+</div>
+{% endblock %}
+
+
+{% block js %}{% endblock %}

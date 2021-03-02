@@ -128,25 +128,16 @@ class ContributeView(L10nTemplateView):
 
 
 class HomePageView(L10nTemplateView):
-    def get_lang(self):
-        locale = get_locale(self.request)
-        if '-' in locale:
-            return locale.split('-')[0]
-
-        return locale
-
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        lang = self.get_lang()
-        page_data = ContentfulEntry.objects.get_homepage(lang)
+        page_data = ContentfulEntry.objects.get_homepage()
         ctx['card_layouts'] = page_data['layouts'] if page_data else []
         ctx['pocket_articles'] = PocketArticle.objects.all()[:4]
         return ctx
 
     def get_template_names(self):
         return [
-            f'mozorg/home/home-{self.get_lang()}.html',
-            'mozorg/home/home.html'
+            'mozorg/contentful-preview.html'
         ]
 
 
@@ -155,30 +146,26 @@ class HomePagePreviewView(L10nTemplateView):
     locales_map = {
         'en': 'en-US',
     }
-    card_data_lang = 'en'
-
-    def get_preview_locale(self):
-        return self.locales_map.get(self.card_data_lang, self.card_data_lang)
-
-    def get_preview_url(self, page_id):
-        return f'/{self.get_preview_locale()}/homepage-preview/{page_id}/'
 
     def get_template_names(self):
         return [
-            f'mozorg/home/home-{self.card_data_lang}.html',
-            'mozorg/home/home-en.html',
+            'mozorg/contentful-preview.html'
         ]
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         page_data = contentful_home_page.get_page_data(ctx['content_id'])
+        entry_data = contentful_home_page.get_entry_data(ctx['content_id'])
+        info =contentful_home_page.get_info_data(ctx['content_id'])
+        body = contentful_home_page.get_body(ctx['content_id'])
+        hero = contentful_home_page.get_hero_data(ctx['content_id'])
         ctx['card_layouts'] = page_data['layouts']
-        self.card_data_lang = page_data['lang'].lower()
+        ctx['page_data'] = page_data if page_data else ['']
+        ctx['entry_data'] = entry_data if entry_data else ['']
+        ctx['info'] = info if info else ['']
+        ctx['body'] = body if body else ['']
+        ctx['hero'] = hero if hero else ['']
         return ctx
 
     def render_to_response(self, context, **response_kwargs):
-        locale = get_locale(self.request)
-        if not locale.startswith(self.card_data_lang):
-            return HttpResponsePermanentRedirect(self.get_preview_url(context['content_id']))
-
         return super().render_to_response(context, **response_kwargs)
