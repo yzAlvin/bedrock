@@ -2,7 +2,7 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
 
-{% from "macros-protocol.html" import feature_card with context %}
+{% from "macros-protocol.html" import hero with context %}
 
 {% extends "firefox/base/base-protocol.html" %}
 
@@ -23,12 +23,13 @@
 {% block page_og_title %}{{ info.title }}{% endblock %}
 {% block page_og_desc %}{{ info.blurb }}{% endblock %}
 
-{% block page_css %}{% endblock %}
+{% block page_css %}
+  {{ css_bundle('contentful_general') }}
+{% endblock %}
 
 {% block body_class %}mzp-t-firefox wmo-contentful{% endblock %}
 
 {% block content %}
-
 
 <div class="mzp-l-content">
 
@@ -43,12 +44,27 @@
   Title: {{ info.title }}<br>
   Blurb: {{ info.blurb }}<br>
   Slug: {{ info.slug }}<br>
-  Hero: {{ hero }}
+  Hero: {{ hero_data }}
   </p>
+</div>
 
-  <p>
+  {% call hero(
+    title= hero_data.title,
+    subheading= hero_data.tagline,
+    desc= hero_data.body,
+    class='mzp-has-image ' + hero_data.theme_class + ' ' + hero_data.product_class,
+    include_cta=True,
+    heading_level=1,
+    subheading_level=2,
+  ) %}
+
+    {{ download_firefox(download_location='secondary cta') }}
+
+  {% endcall %}
+
+  <div class="mzp-l-content">
     {{ body|safe }}
-  </p>
+  </div>
 
 </div>
 {% endblock %}

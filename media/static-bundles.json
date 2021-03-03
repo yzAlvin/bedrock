@@ -702,6 +702,12 @@
         "css/firefox/unfck.fr.scss"
       ],
       "name": "firefox-unfck-fr"
+    },
+    {
+      "files": [
+        "css/contentful/general.scss"
+      ],
+      "name": "contentful_general"
     }
   ],
   "js": [

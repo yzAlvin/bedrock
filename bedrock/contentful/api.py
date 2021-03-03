@@ -276,15 +276,35 @@ class ContentfulHomePage(ContentfulBase):
 
         return page_body
 
+
+    def get_product_class(self, product):
+        product_themes = {
+            'Firefox' : 'firefox',
+            'Firefox Beta' : 'beta',
+            'Firefox Developer' : 'developer',
+            'Firefox Nightly' : 'nightly',
+        }
+        return 'mzp-t-product-' + product_themes[product] if product in product_themes else ['']
+
+    def get_theme_class(self, theme):
+        return 'mzp-t-dark' if theme == "Dark" else ['']
+
     def get_hero_data(self, page_id):
         page_obj = self.client.entry(page_id)
         fields = page_obj.fields()
         hero = fields['hero']
-        print(hero)
-        return hero.id
-
-
-
+        hero_fields = hero.fields()
+        hero_data = {
+            'theme_class': self.get_theme_class(hero_fields.get('theme')),
+            'product_class': self.get_product_class(hero_fields.get('product_icon')),
+            'title': hero_fields.get('heading'),
+            'heading_size': hero_fields.get('heading_size'),
+            'tagline': hero_fields.get('tagline'),
+            'body': hero_fields.get('body'),
+            'image': hero_fields.get('image'),
+            'image_position': hero_fields.get('image_position'),
+        }
+        return hero_data
 
 contentful_home_page = ContentfulHomePage()
 contentful_unfck_page = ContentfulUnfckPage()

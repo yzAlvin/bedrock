@@ -158,13 +158,13 @@ class HomePagePreviewView(L10nTemplateView):
         entry_data = contentful_home_page.get_entry_data(ctx['content_id'])
         info =contentful_home_page.get_info_data(ctx['content_id'])
         body = contentful_home_page.get_body(ctx['content_id'])
-        hero = contentful_home_page.get_hero_data(ctx['content_id'])
+        hero_data = contentful_home_page.get_hero_data(ctx['content_id'])
         ctx['card_layouts'] = page_data['layouts']
         ctx['page_data'] = page_data if page_data else ['']
         ctx['entry_data'] = entry_data if entry_data else ['']
         ctx['info'] = info if info else ['']
         ctx['body'] = body if body else ['']
-        ctx['hero'] = hero if hero else ['']
+        ctx['hero_data'] = hero_data if hero_data else ['']
         return ctx
 
     def render_to_response(self, context, **response_kwargs):
