@@ -31,12 +31,14 @@
   <div class="mzp-l-content">
     <div class="mzp-c-hero-body">
       <h{{ heading_level }} class="mzp-c-hero-title">{{ title }}</h{{ heading_level }}>
-      {% if subheading %}
-      <h{{ subheading_level }} class="hero-subheading">{{ subheading }}</h{{ subheading_level }}>
-      {% endif %}
-      {% if desc %}
+      {% if subheading or desc %}
       <div class="mzp-c-hero-desc">
-        <p>{{ desc }}</p>
+        {% if subheading %}
+          <p class="mzp-c-hero-tagline">{{ subheading }}</p>
+        {% endif %}
+        {% if desc %}
+          <p>{{ desc }}</p>
+        {% endif %}
       </div>
       {% endif %}
       {% if include_cta %}

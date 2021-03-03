@@ -30,43 +30,47 @@
 {% block body_class %}mzp-t-firefox wmo-contentful{% endblock %}
 
 {% block content %}
+<main role="main">
 
-<div class="mzp-l-content">
+  {% if hero_data.title %}
+    {% call hero(
+      title= hero_data.title,
+      subheading= hero_data.tagline,
+      desc= hero_data.body,
+      class='mzp-has-image ' + hero_data.theme_class + ' ' + hero_data.product_class,
+      include_cta=True,
+      heading_level=1,
+      subheading_level=2,
+    ) %}
 
-  <p>
-    Entry Data:
-      {{ entry_data }}
-    <br>
-    Page Data:
-      {{ page_data }}
-    </p>
-  <p>
-  Title: {{ info.title }}<br>
-  Blurb: {{ info.blurb }}<br>
-  Slug: {{ info.slug }}<br>
-  Hero: {{ hero_data }}
-  </p>
-</div>
+      {{ download_firefox(download_location='secondary cta') }}
 
-  {% call hero(
-    title= hero_data.title,
-    subheading= hero_data.tagline,
-    desc= hero_data.body,
-    class='mzp-has-image ' + hero_data.theme_class + ' ' + hero_data.product_class,
-    include_cta=True,
-    heading_level=1,
-    subheading_level=2,
-  ) %}
+    {% endcall %}
+  {% endif %}
 
-    {{ download_firefox(download_location='secondary cta') }}
-
-  {% endcall %}
-
-  <div class="mzp-l-content">
-    {{ body|safe }}
+  <div class="mzp-l-content mzp-t-content-md">
+      <article class="mzp-c-article">
+        {{ body|safe }}
+      </article>
   </div>
-
-</div>
+{#
+  <div class="mzp-l-content">
+    <p>
+      Entry Data:
+        {{ entry_data }}
+      <br>
+      Page Data:
+        {{ page_data }}
+      </p>
+    <p>
+      Title: {{ info.title }}<br>
+      Blurb: {{ info.blurb }}<br>
+      Slug: {{ info.slug }}<br>
+      Hero: {{ hero_data }}
+    </p>
+  </div>
+#}
+</main>
 {% endblock %}
 
 

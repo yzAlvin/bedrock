@@ -276,7 +276,6 @@ class ContentfulHomePage(ContentfulBase):
 
         return page_body
 
-
     def get_product_class(self, product):
         product_themes = {
             'Firefox' : 'firefox',
@@ -284,10 +283,10 @@ class ContentfulHomePage(ContentfulBase):
             'Firefox Developer' : 'developer',
             'Firefox Nightly' : 'nightly',
         }
-        return 'mzp-t-product-' + product_themes[product] if product in product_themes else ['']
+        return 'mzp-t-product-' + product_themes[product] if product in product_themes else ''
 
     def get_theme_class(self, theme):
-        return 'mzp-t-dark' if theme == "Dark" else ['']
+        return 'mzp-t-dark' if theme == "Dark" else ''
 
     def get_hero_data(self, page_id):
         page_obj = self.client.entry(page_id)
