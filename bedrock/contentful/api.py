@@ -174,6 +174,7 @@ class ContentfulHomePage(ContentfulBase):
         pages = self.client.entries({'content_type': 'pageGeneral'})
         return [self.get_page_data(p.id) for p in pages]
 
+    # page entry
     def get_entry_data(self, page_id):
         entry_data = self.client.entry(page_id)
         # print(entry_data.__dict__)
@@ -214,9 +215,13 @@ class ContentfulHomePage(ContentfulBase):
     def get_info_data(self, page_id):
         page_obj = self.client.entry(page_id)
         fields = page_obj.fields()
+
+        preview_image_url = fields['preview_image'].fields().get('file').get('url')
+
         info_data = {
             'title': fields['preview_title'],
             'blurb': fields['preview_blurb'],
+            'image': 'https:' + preview_image_url,
             'slug': self.make_slug(fields['url']),
         }
         return info_data
@@ -291,19 +296,54 @@ class ContentfulHomePage(ContentfulBase):
     def get_hero_data(self, page_id):
         page_obj = self.client.entry(page_id)
         fields = page_obj.fields()
-        hero = fields['hero']
-        hero_fields = hero.fields()
-        hero_data = {
-            'theme_class': self.get_theme_class(hero_fields.get('theme')),
-            'product_class': self.get_product_class(hero_fields.get('product_icon')),
-            'title': hero_fields.get('heading'),
-            'heading_size': hero_fields.get('heading_size'),
-            'tagline': hero_fields.get('tagline'),
-            'body': hero_fields.get('body'),
-            'image': hero_fields.get('image'),
-            'image_position': hero_fields.get('image_position'),
-        }
+        if 'component_hero' in fields:
+            hero_obj = fields['component_hero']
+            hero_fields = hero_obj.fields()
+            hero_image_url = hero_fields['image'].fields().get('file').get('url')
+
+            hero_data = {
+                'theme_class': self.get_theme_class(hero_fields.get('theme')),
+                'product_class': self.get_product_class(hero_fields.get('product_icon')),
+                'title': hero_fields.get('heading'),
+                'tagline': hero_fields.get('tagline'),
+                'body': hero_fields.get('body'),
+                'image': 'https:' + hero_image_url,
+                'image_position': hero_fields.get('image_position'),
+            }
+        else:
+            hero_data = {}
+
         return hero_data
+
+    # any entry
+    def get_entry_by_id(self, entry_id):
+        return self.client.entry(entry_id)
+
+    def get_callout_data(self, page_id):
+        page_obj = self.client.entry(page_id)
+        fields = page_obj.fields()
+
+        if 'layout_callout' in fields:
+            callout_layout_obj = fields['layout_callout']
+            callout_layout_fields = callout_layout_obj.fields()
+
+            callout_component_id = callout_layout_fields.get('component_callout').id
+            callout_component_obj = self.get_entry_by_id(callout_component_id)
+            callout_component_fields = callout_component_obj.fields()
+
+            callout_data = {
+                'theme_class': self.get_theme_class(callout_layout_fields.get('theme')),
+                'product_class': self.get_product_class(callout_component_fields.get('product_icon')),
+                'title': callout_component_fields.get('heading'),
+                'body': callout_component_fields.get('body'),
+            }
+        else:
+            callout_data = {}
+
+        return callout_data
+
+
+
 
 contentful_home_page = ContentfulHomePage()
 contentful_unfck_page = ContentfulUnfckPage()

@@ -8,6 +8,7 @@ $image-path: '/media/protocol/img';
 @import '../../protocol/css/includes/lib';
 @import '../../protocol/css/components/hero';
 @import '../../protocol/css/components/article';
+@import '../../protocol/css/components/call-out';
 
 // --------------------------------------------------------------------------
 // Protocol over-rides
@@ -61,6 +62,10 @@ $h-grid-lg: 80px;
 .mzp-t-firefox .mzp-t-dark {
 
     &.mzp-c-hero {
+        background-color: $color-ink-80;
+    }
+
+    &.mzp-c-call-out-compact {
         background-color: $color-ink-80;
     }
 }

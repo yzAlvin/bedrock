@@ -2,7 +2,7 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
 
-{% from "macros-protocol.html" import hero with context %}
+{% from "macros-protocol.html" import hero, call_out_compact with context %}
 
 {% extends "firefox/base/base-protocol.html" %}
 
@@ -20,6 +20,7 @@
 {# meta data #}
 {% block page_title %}{{ info.title }}{% endblock %}
 {% block page_desc %}{{ info.blurb }}{% endblock %}
+{% block page_image %}{{ info.image }}{% endblock %}
 {% block page_og_title %}{{ info.title }}{% endblock %}
 {% block page_og_desc %}{{ info.blurb }}{% endblock %}
 
@@ -31,19 +32,20 @@
 
 {% block content %}
 <main role="main">
-
   {% if hero_data.title %}
     {% call hero(
-      title= hero_data.title,
-      subheading= hero_data.tagline,
-      desc= hero_data.body,
-      class='mzp-has-image ' + hero_data.theme_class + ' ' + hero_data.product_class,
+      title=hero_data.title,
+      tagline=hero_data.tagline,
+      desc=hero_data.body,
+      class=hero_data.theme_class + ' ' + hero_data.product_class,
       include_cta=True,
       heading_level=1,
-      subheading_level=2,
+      image_url=hero_data.image,
+      include_highres_image=False,
+      l10n_image=False
     ) %}
 
-      {{ download_firefox(download_location='secondary cta') }}
+      {{ download_firefox(download_location='primary cta') }}
 
     {% endcall %}
   {% endif %}
@@ -53,7 +55,20 @@
         {{ body|safe }}
       </article>
   </div>
-{#
+
+  {% if callout_data.title %}
+    {% call call_out_compact(
+      title=callout_data.title,
+      desc=callout_data.body,
+      class=callout_data.theme_class + ' ' + callout_data.product_class,
+    ) %}
+      <div class="download-firefox">
+        {{ download_firefox(download_location='secondary cta') }}
+      </div>
+    {% endcall %}
+  {% endif %}
+
+  <!--
   <div class="mzp-l-content">
     <p>
       Entry Data:
@@ -66,10 +81,13 @@
       Title: {{ info.title }}<br>
       Blurb: {{ info.blurb }}<br>
       Slug: {{ info.slug }}<br>
-      Hero: {{ hero_data }}
+      Hero: {{ hero_data }}<br>
+      Callout: {{ callout_data }}<br>
     </p>
-  </div>
-#}
+  </div> -->
+
+
+
 </main>
 {% endblock %}
 
