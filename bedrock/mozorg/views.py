@@ -156,18 +156,22 @@ class HomePagePreviewView(L10nTemplateView):
         ctx = super().get_context_data(**kwargs)
         page_data = contentful_home_page.get_page_data(ctx['content_id'])
         entry_data = contentful_home_page.get_entry_data(ctx['content_id'])
+        entries = contentful_home_page.get_content(ctx['content_id'])
         info =contentful_home_page.get_info_data(ctx['content_id'])
-        body = contentful_home_page.get_body(ctx['content_id'])
-        hero_data = contentful_home_page.get_hero_data(ctx['content_id'])
-        callout_data = contentful_home_page.get_callout_data(ctx['content_id'])
-        ctx['card_layouts'] = page_data['layouts']
-        ctx['page_data'] = page_data if page_data else ['']
-        ctx['entry_data'] = entry_data if entry_data else ['']
-        ctx['info'] = info if info else ['']
-        ctx['body'] = body if body else ['']
-        ctx['hero_data'] = hero_data if hero_data else ['']
-        ctx['callout_data'] = callout_data if callout_data else ['']
+        # body = contentful_home_page.get_body(ctx['content_id'])
+        # hero_data = contentful_home_page.get_hero_data(ctx['content_id'])
+        # callout_data = contentful_home_page.get_callout_data(ctx['content_id'])
+        # ctx['card_layouts'] = page_data['layouts']
+        # ctx['page_data'] = page_data if page_data else ['']
+        # ctx['entry_data'] = entry_data if entry_data else ['']
+        ctx['info'] =  info if info else ['']
+        ctx['entries'] = entries if entries else ['']
+        # ctx['body'] = body if body else ['']
+        # ctx['hero_data'] = hero_data if hero_data else ['']
+        # ctx['callout_data'] = callout_data if callout_data else ['']
         return ctx
 
     def render_to_response(self, context, **response_kwargs):
         return super().render_to_response(context, **response_kwargs)
+
+### TODO: pass to template based on page type
