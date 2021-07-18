@@ -1,0 +1,28 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% extends "firefox/base/base-protocol.html" %}
+
+{% from "macros-protocol.html" import split with context %}
+
+{% block page_title %}Hello world{% endblock %}
+{% block page_desc %}This is only a test.{% endblock %}
+
+{% block page_css %}
+  {{ css_bundle('newbies') }}
+{% endblock %}
+
+{% block content %}
+<div class="mzp-l-content">
+
+  {% call split(
+    image_url='img/firefox/browsers/quantum/browser.jpg',
+    include_highres_image=True,
+  ) %}
+    <h1 class="mzp-u-title-xl">{{ ftl('firefox-newbies-hello-world') }}</h1>
+    <p>{{ ftl('firefox-newbies-wibble-wobble-woo') }}</p>
+  {% endcall %}
+
+</div>
+{% endblock %}

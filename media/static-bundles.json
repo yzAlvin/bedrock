@@ -425,6 +425,12 @@
     },
     {
       "files": [
+        "css/firefox/newbies.scss"
+      ],
+      "name": "newbies"
+    },
+    {
+      "files": [
         "css/firefox/privacy/common.scss"
       ],
       "name": "firefox-privacy-common"
