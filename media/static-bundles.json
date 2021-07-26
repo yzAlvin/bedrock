@@ -1,129 +1,87 @@
 {
   "css": [
     {
-      "files": [
-        "css/firefox/whatsnew/whatsnew-nightly.scss"
-      ],
+      "files": ["css/firefox/whatsnew/whatsnew-nightly.scss"],
       "name": "nightly_whatsnew"
     },
     {
-      "files": [
-        "css/mozorg/locales.scss"
-      ],
+      "files": ["css/mozorg/locales.scss"],
       "name": "locales"
     },
     {
-      "files": [
-        "css/mozorg/mission.scss"
-      ],
+      "files": ["css/mozorg/mission.scss"],
       "name": "mission"
     },
     {
-      "files": [
-        "css/base/page-not-found.scss"
-      ],
+      "files": ["css/base/page-not-found.scss"],
       "name": "page_not_found"
     },
     {
-      "files": [
-        "css/mozorg/namespaces.scss"
-      ],
+      "files": ["css/mozorg/namespaces.scss"],
       "name": "namespaces"
     },
     {
-      "files": [
-        "css/mozorg/about-forums.scss"
-      ],
+      "files": ["css/mozorg/about-forums.scss"],
       "name": "about-forums"
     },
     {
-      "files": [
-        "css/firefox/retention/thank-you.scss"
-      ],
+      "files": ["css/firefox/retention/thank-you.scss"],
       "name": "firefox-retention-thank-you"
     },
     {
-      "files": [
-        "css/firefox/system-requirements.scss"
-      ],
+      "files": ["css/firefox/system-requirements.scss"],
       "name": "firefox_system_requirements"
     },
     {
-      "files": [
-        "css/firefox/installer-help.scss"
-      ],
+      "files": ["css/firefox/installer-help.scss"],
       "name": "installer_help"
     },
     {
-      "files": [
-        "css/mozorg/participation-reporting.scss"
-      ],
+      "files": ["css/mozorg/participation-reporting.scss"],
       "name": "participation-reporting"
     },
     {
-      "files": [
-        "css/mozorg/mpl-differences.scss"
-      ],
+      "files": ["css/mozorg/mpl-differences.scss"],
       "name": "mpl-differences"
     },
     {
-      "files": [
-        "css/firefox/releases-index.scss"
-      ],
+      "files": ["css/firefox/releases-index.scss"],
       "name": "firefox_releases_index"
     },
     {
-      "files": [
-        "css/press/press.scss"
-      ],
+      "files": ["css/press/press.scss"],
       "name": "press"
     },
     {
-      "files": [
-        "css/mozorg/mpl-1-1-annotated.scss"
-      ],
+      "files": ["css/mozorg/mpl-1-1-annotated.scss"],
       "name": "mpl-1-1-annotated"
     },
     {
-      "files": [
-        "css/firefox/developer/developer.scss"
-      ],
+      "files": ["css/firefox/developer/developer.scss"],
       "name": "firefox_developer"
     },
     {
-      "files": [
-        "css/firefox/sticky-promo.scss"
-      ],
+      "files": ["css/firefox/sticky-promo.scss"],
       "name": "sticky_promo"
     },
     {
-      "files": [
-        "css/firefox/new/basic/download.scss"
-      ],
+      "files": ["css/firefox/new/basic/download.scss"],
       "name": "firefox_new_download"
     },
     {
-      "files": [
-        "css/firefox/new/basic/platform.scss"
-      ],
+      "files": ["css/firefox/new/basic/platform.scss"],
       "name": "firefox_new_platform"
     },
     {
-      "files": [
-        "css/firefox/new/desktop/download.scss"
-      ],
+      "files": ["css/firefox/new/desktop/download.scss"],
       "name": "firefox_desktop_download"
     },
     {
-      "files": [
-        "css/firefox/new/desktop/ie9.scss"
-      ],
+      "files": ["css/firefox/new/desktop/ie9.scss"],
       "name": "firefox_desktop_download_ie9"
     },
     {
-      "files": [
-        "css/firefox/new/desktop/ie8.scss"
-      ],
+      "files": ["css/firefox/new/desktop/ie8.scss"],
       "name": "firefox_desktop_download_ie8"
     },
     {
@@ -141,45 +99,31 @@
       "name": "firefox_new_thanks"
     },
     {
-      "files": [
-        "css/firefox/new/yandex/download-yandex.scss"
-      ],
+      "files": ["css/firefox/new/yandex/download-yandex.scss"],
       "name": "firefox_new_download_yandex"
     },
     {
-      "files": [
-        "css/exp/opt-out.scss"
-      ],
+      "files": ["css/exp/opt-out.scss"],
       "name": "exp-opt-out"
     },
     {
-      "files": [
-        "css/security/security.scss"
-      ],
+      "files": ["css/security/security.scss"],
       "name": "security"
     },
     {
-      "files": [
-        "css/firefox/testflight.scss"
-      ],
+      "files": ["css/firefox/testflight.scss"],
       "name": "firefox_ios_testflight"
     },
     {
-      "files": [
-        "css/mozorg/contribute.scss"
-      ],
+      "files": ["css/mozorg/contribute.scss"],
       "name": "contribute"
     },
     {
-      "files": [
-        "css/security/hall-of-fame.scss"
-      ],
+      "files": ["css/security/hall-of-fame.scss"],
       "name": "security-bug-bounty-hall-of-fame"
     },
     {
-      "files": [
-        "css/mozorg/manifesto.scss"
-      ],
+      "files": ["css/mozorg/manifesto.scss"],
       "name": "manifesto"
     },
     {
@@ -191,154 +135,103 @@
       "name": "firefox-features-hub-detail"
     },
     {
-      "files": [
-        "css/firefox/features/picture-in-picture.scss"
-      ],
+      "files": ["css/firefox/features/picture-in-picture.scss"],
       "name": "firefox-features-pip"
     },
     {
-      "files": [
-        "css/newsletter/newsletter.scss",
-        "css/mozorg/home/home.scss"
-      ],
+      "files": ["css/newsletter/newsletter.scss", "css/mozorg/home/home.scss"],
       "name": "home"
     },
     {
-      "files": [
-        "css/mozorg/home/home-mr1-promo.scss"
-      ],
+      "files": ["css/mozorg/home/home-mr1-promo.scss"],
       "name": "home-mr1-promo"
     },
     {
-      "files": [
-        "css/newsletter/newsletter.scss"
-      ],
+      "files": ["css/newsletter/newsletter.scss"],
       "name": "newsletter"
     },
     {
-      "files": [
-        "css/mozorg/mpl-1-1.scss"
-      ],
+      "files": ["css/mozorg/mpl-1-1.scss"],
       "name": "mpl-1-1"
     },
     {
-      "files": [
-        "css/mozorg/home/home-2018.scss"
-      ],
+      "files": ["css/mozorg/home/home-2018.scss"],
       "name": "home-2018"
     },
     {
-      "files": [
-        "css/mozorg/home/home-en.scss"
-      ],
+      "files": ["css/mozorg/home/home-en.scss"],
       "name": "home-en"
     },
     {
-      "files": [
-        "css/base/banners/fundraiser.scss"
-      ],
+      "files": ["css/base/banners/fundraiser.scss"],
       "name": "fundraising-banner"
     },
     {
-      "files": [
-        "css/base/banners/firefox-mobile.scss"
-      ],
+      "files": ["css/base/banners/firefox-mobile.scss"],
       "name": "firefox-mobile-banner"
     },
     {
-      "files": [
-        "css/base/banners/daylight-promo.scss"
-      ],
+      "files": ["css/base/banners/daylight-promo.scss"],
       "name": "daylight-promo-banner"
     },
     {
-      "files": [
-        "css/base/banners/eu-mr1-banner.scss"
-      ],
+      "files": ["css/base/banners/eu-mr1-banner.scss"],
       "name": "eu-mr1-banner"
     },
     {
-      "files": [
-        "css/base/banners/native-android-exp.scss"
-      ],
+      "files": ["css/base/banners/native-android-exp.scss"],
       "name": "native-android-exp-banner"
     },
     {
-      "files": [
-        "css/protocol/common-old-ie.scss"
-      ],
+      "files": ["css/protocol/common-old-ie.scss"],
       "name": "common-old-ie"
     },
     {
-      "files": [
-        "css/legal/legal.scss"
-      ],
+      "files": ["css/legal/legal.scss"],
       "name": "legal"
     },
     {
-      "files": [
-        "css/mozorg/about-transparency.scss"
-      ],
+      "files": ["css/mozorg/about-transparency.scss"],
       "name": "about-transparency"
     },
     {
-      "files": [
-        "css/csrf-failure.scss"
-      ],
+      "files": ["css/csrf-failure.scss"],
       "name": "csrf-failure"
     },
     {
-      "files": [
-        "css/foundation/annual-report-2019.scss"
-      ],
+      "files": ["css/foundation/annual-report-2019.scss"],
       "name": "annual_report_2019"
     },
     {
-      "files": [
-        "css/foundation/annual-report-2011.scss"
-      ],
+      "files": ["css/foundation/annual-report-2011.scss"],
       "name": "annual_report_2011"
     },
     {
-      "files": [
-        "css/foundation/annual-report.scss"
-      ],
+      "files": ["css/foundation/annual-report.scss"],
       "name": "annual_report"
     },
     {
-      "files": [
-        "css/foundation/feed-icon-guidelines.scss"
-      ],
+      "files": ["css/foundation/feed-icon-guidelines.scss"],
       "name": "foundation-feed-icon-guidelines"
     },
     {
-      "files": [
-        "css/protocol/basic-article.scss"
-      ],
+      "files": ["css/protocol/basic-article.scss"],
       "name": "basic-article"
     },
     {
-      "files": [
-        "css/mozorg/credits.scss"
-      ],
+      "files": ["css/mozorg/credits.scss"],
       "name": "credits"
     },
     {
-      "files": [
-        "css/mozorg/about-patents.scss"
-      ],
+      "files": ["css/mozorg/about-patents.scss"],
       "name": "about-patents"
     },
     {
-      "files": [
-        "css/mozorg/about.scss"
-      ],
+      "files": ["css/mozorg/about.scss"],
       "name": "about"
     },
     {
-      "files": [
-        "css/newsletter/newsletter-mozilla.scss"
-      ],
+      "files": ["css/newsletter/newsletter-mozilla.scss"],
       "name": "newsletter-mozilla"
     },
     {
@@ -363,27 +256,19 @@
       "name": "firefox_whatsnew_mobile_de"
     },
     {
-      "files": [
-        "css/firefox/whatsnew/whatsnew-mobile-qrcode-de.scss"
-      ],
+      "files": ["css/firefox/whatsnew/whatsnew-mobile-qrcode-de.scss"],
       "name": "firefox_whatsnew_mobile_qrcode_de"
     },
     {
-      "files": [
-        "css/firefox/firstrun/nightly.scss"
-      ],
+      "files": ["css/firefox/firstrun/nightly.scss"],
       "name": "nightly_firstrun"
     },
     {
-      "files": [
-        "css/firefox/lockwise/lockwise.scss"
-      ],
+      "files": ["css/firefox/lockwise/lockwise.scss"],
       "name": "lockwise"
     },
     {
-      "files": [
-        "css/firefox/flashback/flashback.scss"
-      ],
+      "files": ["css/firefox/flashback/flashback.scss"],
       "name": "flashback"
     },
     {
@@ -394,111 +279,79 @@
       "name": "firefox_whatsnew_86"
     },
     {
-      "files": [
-        "css/firefox/whatsnew/whatsnew-87.scss"
-      ],
+      "files": ["css/firefox/whatsnew/whatsnew-87.scss"],
       "name": "firefox_whatsnew_87"
     },
     {
-      "files": [
-        "css/firefox/whatsnew/whatsnew-87-eu-vpn.scss"
-      ],
+      "files": ["css/firefox/whatsnew/whatsnew-87-eu-vpn.scss"],
       "name": "firefox_whatsnew_87_eu_vpn"
     },
     {
-      "files": [
-        "css/firefox/whatsnew/whatsnew-88-en.scss"
-      ],
+      "files": ["css/firefox/whatsnew/whatsnew-88-en.scss"],
       "name": "firefox_whatsnew_88_en"
     },
     {
-      "files": [
-        "css/firefox/whatsnew/whatsnew-90.scss"
-      ],
+      "files": ["css/firefox/whatsnew/whatsnew-90.scss"],
       "name": "firefox_whatsnew_90"
     },
     {
-      "files": [
-        "css/firefox/whatsnew/whatsnew-90-eu.scss"
-      ],
+      "files": ["css/firefox/whatsnew/whatsnew-90-eu.scss"],
       "name": "firefox_whatsnew_90_eu"
     },
     {
-      "files": [
-        "css/firefox/newbies.scss"
-      ],
+      "files": ["css/firefox/newbies.scss"],
       "name": "newbies"
     },
     {
-      "files": [
-        "css/firefox/privacy/common.scss"
-      ],
+      "files": ["css/firefox/reemie.scss"],
+      "name": "reemie"
+    },
+    {
+      "files": ["css/firefox/privacy/common.scss"],
       "name": "firefox-privacy-common"
     },
     {
-      "files": [
-        "css/firefox/privacy/promise.scss"
-      ],
+      "files": ["css/firefox/privacy/promise.scss"],
       "name": "firefox-privacy-promise"
     },
     {
-      "files": [
-        "css/firefox/privacy/products.scss"
-      ],
+      "files": ["css/firefox/privacy/products.scss"],
       "name": "firefox-privacy-products"
     },
     {
-      "files": [
-        "css/privacy/privacy-email.scss"
-      ],
+      "files": ["css/privacy/privacy-email.scss"],
       "name": "privacy_email"
     },
     {
-      "files": [
-        "css/firefox/set-as-default/thanks.scss"
-      ],
+      "files": ["css/firefox/set-as-default/thanks.scss"],
       "name": "firefox-default-thanks"
     },
     {
-      "files": [
-        "css/firefox/switch.scss"
-      ],
+      "files": ["css/firefox/switch.scss"],
       "name": "firefox-switch"
     },
     {
-      "files": [
-        "css/newsletter/newsletter-developer.scss"
-      ],
+      "files": ["css/newsletter/newsletter-developer.scss"],
       "name": "newsletter-developer"
     },
     {
-      "files": [
-        "css/firefox/firstrun/firstrun.scss"
-      ],
+      "files": ["css/firefox/firstrun/firstrun.scss"],
       "name": "firefox_firstrun_quantum"
     },
     {
-      "files": [
-        "css/newsletter/newsletter-opt-out-confirmation.scss"
-      ],
+      "files": ["css/newsletter/newsletter-opt-out-confirmation.scss"],
       "name": "newsletter-opt-out-confirmation"
     },
     {
-      "files": [
-        "css/firefox/all/all-unified.scss"
-      ],
+      "files": ["css/firefox/all/all-unified.scss"],
       "name": "firefox_all_unified"
     },
     {
-      "files": [
-        "css/firefox/all/all-unified-old-ie.scss"
-      ],
+      "files": ["css/firefox/all/all-unified-old-ie.scss"],
       "name": "firefox_all_unified_old_ie"
     },
     {
-      "files": [
-        "css/mozorg/lean-data.scss"
-      ],
+      "files": ["css/mozorg/lean-data.scss"],
       "name": "lean-data"
     },
     {
@@ -510,27 +363,19 @@
       "name": "firefox-features-index"
     },
     {
-      "files": [
-        "css/firefox/unsupported-systems.scss"
-      ],
+      "files": ["css/firefox/unsupported-systems.scss"],
       "name": "firefox_unsupported_systems"
     },
     {
-      "files": [
-        "css/protocol/protocol-mozilla.scss"
-      ],
+      "files": ["css/protocol/protocol-mozilla.scss"],
       "name": "protocol-mozilla"
     },
     {
-      "files": [
-        "css/protocol/protocol-firefox.scss"
-      ],
+      "files": ["css/protocol/protocol-firefox.scss"],
       "name": "protocol-firefox"
     },
     {
-      "files": [
-        "css/firefox/home/ie9.scss"
-      ],
+      "files": ["css/firefox/home/ie9.scss"],
       "name": "firefox-home-ie9"
     },
     {
@@ -548,21 +393,15 @@
       "name": "firefox-browsers-products"
     },
     {
-      "files": [
-        "css/mozorg/book.scss"
-      ],
+      "files": ["css/mozorg/book.scss"],
       "name": "book"
     },
     {
-      "files": [
-        "css/firefox/set-as-default/landing.scss"
-      ],
+      "files": ["css/firefox/set-as-default/landing.scss"],
       "name": "firefox-default-landing"
     },
     {
-      "files": [
-        "css/firefox/enterprise/landing.scss"
-      ],
+      "files": ["css/firefox/enterprise/landing.scss"],
       "name": "firefox-enterprise"
     },
     {
@@ -573,33 +412,23 @@
       "name": "firefox_releasenotes"
     },
     {
-      "files": [
-        "css/newsletter/newsletter-firefox.scss"
-      ],
+      "files": ["css/newsletter/newsletter-firefox.scss"],
       "name": "newsletter-firefox"
     },
     {
-      "files": [
-        "css/mozorg/mpl-2-0.scss"
-      ],
+      "files": ["css/mozorg/mpl-2-0.scss"],
       "name": "mpl-2-0"
     },
     {
-      "files": [
-        "css/mozorg/contact-spaces.scss"
-      ],
+      "files": ["css/mozorg/contact-spaces.scss"],
       "name": "contact-spaces"
     },
     {
-      "files": [
-        "css/mozorg/leadership.scss"
-      ],
+      "files": ["css/mozorg/leadership.scss"],
       "name": "about-leadership"
     },
     {
-      "files": [
-        "css/mozorg/moss.scss"
-      ],
+      "files": ["css/mozorg/moss.scss"],
       "name": "moss"
     },
     {
@@ -624,33 +453,23 @@
       "name": "firefox_accounts_2019"
     },
     {
-      "files": [
-        "css/privacy/privacy-protocol.scss"
-      ],
+      "files": ["css/privacy/privacy-protocol.scss"],
       "name": "privacy_protocol"
     },
     {
-      "files": [
-        "css/firefox/facebook-container.scss"
-      ],
+      "files": ["css/firefox/facebook-container.scss"],
       "name": "firefox_facebook_container"
     },
     {
-      "files": [
-        "css/firefox/channel.scss"
-      ],
+      "files": ["css/firefox/channel.scss"],
       "name": "firefox_channel"
     },
     {
-      "files": [
-        "css/mozorg/commit-access-requirements.scss"
-      ],
+      "files": ["css/mozorg/commit-access-requirements.scss"],
       "name": "commit-access-requirements"
     },
     {
-      "files": [
-        "css/firefox/pocket.scss"
-      ],
+      "files": ["css/firefox/pocket.scss"],
       "name": "product_pocket"
     },
     {
@@ -668,9 +487,7 @@
       "name": "what-is-a-browser"
     },
     {
-      "files": [
-        "css/firefox/browsers/update-browser.scss"
-      ],
+      "files": ["css/firefox/browsers/update-browser.scss"],
       "name": "update-browser"
     },
     {
@@ -702,15 +519,11 @@
       "name": "safebrowser"
     },
     {
-      "files": [
-        "css/firefox/seo.scss"
-      ],
+      "files": ["css/firefox/seo.scss"],
       "name": "seo"
     },
     {
-      "files": [
-        "css/firefox/more/misinformation.scss"
-      ],
+      "files": ["css/firefox/more/misinformation.scss"],
       "name": "misinformation"
     },
     {
@@ -743,40 +556,27 @@
       "name": "firefox_welcome"
     },
     {
-      "files": [
-        "css/firefox/welcome10.scss"
-      ],
+      "files": ["css/firefox/welcome10.scss"],
       "name": "firefox_welcome_page10"
     },
     {
-      "files": [
-        "css/firefox/unfck.scss"
-      ],
+      "files": ["css/firefox/unfck.scss"],
       "name": "firefox-unfck"
     },
     {
-      "files": [
-        "css/firefox/faq.scss"
-      ],
+      "files": ["css/firefox/faq.scss"],
       "name": "firefox-faq"
     },
     {
-      "files": [
-        "css/firefox/unfck.de.scss"
-      ],
+      "files": ["css/firefox/unfck.de.scss"],
       "name": "firefox-unfck-de"
     },
     {
-      "files": [
-        "css/firefox/unfck.fr.scss"
-      ],
+      "files": ["css/firefox/unfck.fr.scss"],
       "name": "firefox-unfck-fr"
     },
     {
-      "files": [
-        "css/firefox/more.scss",
-        "css/base/mozilla-lazy-image.scss"
-      ],
+      "files": ["css/firefox/more.scss", "css/base/mozilla-lazy-image.scss"],
       "name": "more"
     },
     {
@@ -787,27 +587,19 @@
       "name": "quantum"
     },
     {
-      "files": [
-        "css/firefox/browsers/chromebook.scss"
-      ],
+      "files": ["css/firefox/browsers/chromebook.scss"],
       "name": "chromebook"
     },
     {
-      "files": [
-        "css/firefox/sync.scss"
-      ],
+      "files": ["css/firefox/sync.scss"],
       "name": "sync"
     },
     {
-      "files": [
-        "css/firefox/privacy/book.scss"
-      ],
+      "files": ["css/firefox/privacy/book.scss"],
       "name": "privacy-book"
     },
     {
-      "files": [
-        "css/foundation/reimagine-open.scss"
-      ],
+      "files": ["css/foundation/reimagine-open.scss"],
       "name": "reimagine-open"
     },
     {
@@ -828,9 +620,7 @@
       "name": "mozilla-vpn-platforms"
     },
     {
-      "files": [
-        "css/products/vpn/invite.scss"
-      ],
+      "files": ["css/products/vpn/invite.scss"],
       "name": "mozilla-vpn-invite"
     }
   ],

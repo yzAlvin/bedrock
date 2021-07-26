@@ -1,0 +1,41 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% extends "firefox/base/base-protocol.html" %}
+
+{% from "macros-protocol.html" import split, picto, emphasis_box with context %}
+
+{% block page_title %}Hello, Reem Hamoui{% endblock %}
+{% block page_desc %}This is your test.{% endblock %}
+
+{% block page_css %}
+  {{ css_bundle('reemie') }}
+{% endblock %}
+
+<!-- start block-->
+{% block content %}
+
+<!-- call for split -->
+{% call split(
+  image_url='img/firefox/browsers/chromebook/addon.png',
+  include_highres_image=True,
+  block_class="mzp-l-split-body-narrow, mzp-l-split-reversed"
+) %}
+<h1 class="title">
+  I am Reem, I like ice cream.
+</h1>
+<p>This is it, this is my website.</p>
+<h2>Do you hear me?</h2>
+<h3 class="mzp-has-zap-12">Here is a zap <strong>twelve</strong> example.</h3>
+<div
+ class="mzp-c-wordmark mzp-t-wordmark-md mzp-t-product-firefox">
+  Firefox Browser
+</div>
+
+
+{% endcall %}
+<!-- end call for split -->
+
+{% endblock %}
+<!-- end block-->

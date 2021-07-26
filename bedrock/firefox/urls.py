@@ -41,7 +41,7 @@ urlpatterns = (
     page('firefox/facebookcontainer', 'firefox/facebookcontainer/index.html', ftl_files=['firefox/facebook_container']),
 
     page('firefox/newbies', 'firefox/home/newbies.html', ftl_files=['firefox/newbies']),
-
+    page('firefox/reem-newb', 'firefox/home/reem-newb.html'),
     page('firefox/features', 'firefox/features/index.html',
          ftl_files=['firefox/features/shared', 'firefox/features/index']),
     page('firefox/features/adblocker', 'firefox/features/adblocker.html',
@@ -117,10 +117,10 @@ urlpatterns = (
     page('firefox/welcome/7', 'firefox/welcome/page7.html', ftl_files=['firefox/welcome/page7']),
     url(r'^firefox/welcome/8/$',
         utils_views.VariationTemplateView.as_view(
-          template_name='firefox/welcome/page8.html',
-          ftl_files=['firefox/welcome/page8'],
-          template_context_variations=['text', 'image', 'animation', 'header-text'],
-          variation_locales=['en-US', 'en-CA', 'en-GB', 'de', 'fr']),
+            template_name='firefox/welcome/page8.html',
+            ftl_files=['firefox/welcome/page8'],
+            template_context_variations=['text', 'image', 'animation', 'header-text'],
+            variation_locales=['en-US', 'en-CA', 'en-GB', 'de', 'fr']),
         name='firefox.welcome.page8'),
     page('firefox/welcome/9', 'firefox/welcome/page9.html', active_locales=['de', 'fr']),
     page('firefox/welcome/10', 'firefox/welcome/page10.html'),
