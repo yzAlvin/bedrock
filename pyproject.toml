@@ -3,7 +3,15 @@ line-length = 150  # To match flake8
 target-version = ['py37']
 include = '\.pyi?$'
 exclude = '''
-/(
-	.+/migrations
-)
+  (?x)^(
+    docs
+    | bedrock/settings
+    | node_modules
+    | assets
+    | static
+    | bedrock/externalfiles/files_cache
+    | ^.*\b(migrations)\b.*$
+    | git-repos
+    | lib/fluent_migrations
+  )
 '''
