@@ -2,8 +2,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-@import "../utils/variables";
-@import "./mobile-nav";
+@import '../utils/variables';
+@import './mobile-nav';
 
 $image-path: '/media/img/externalpages/pocket';
 
@@ -34,9 +34,10 @@ $image-path: '/media/img/externalpages/pocket';
     border-radius: 4px;
     transition: all 0.15s ease-out;
 
-    &:focus, &:focus-within {
+    &:focus,
+    &:focus-within {
         border: 1px solid $color-action-primary;
-    }   
+    }
 
     &.inline {
         background: none;
@@ -249,7 +250,6 @@ $image-path: '/media/img/externalpages/pocket';
     }
 
     &.signup-link {
-        border: none;
         border-radius: $border-radius-sm;
         padding: 12px;
         transition: all 0.15s ease-out;
