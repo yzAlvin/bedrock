@@ -6,13 +6,32 @@ $font-path: '/media/fonts';
 $image-path: '/media/protocol/img';
 
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
-@import '~@mozilla-protocol/core/protocol/css/components/hero';
 
 // * -------------------------------------------------------------------------- */
-// Hero
+// Call-out
 
-.mzp-c-hero.mzp-t-dark {
+.mzp-c-call-out[class*='mzp-t-product-'].mzp-t-dark.testflight-call-out {
     background-color: $color-ink-80;
+
+    .mzp-l-content {
+        max-width: 432px;
+        padding: 48px 24px;
+
+        @media #{$mq-md} {
+            max-width: 580px;
+            padding: 48px 64px;
+        }
+
+        @media #{$mq-lg} {
+            padding: 96px 80px;
+        }
+    }
+
+    .mzp-c-call-out-title {
+        @include text-title-lg;
+        background-size: 80px 80px;
+        padding: 104px 0 0;
+    }
 }
 
 // * -------------------------------------------------------------------------- */
