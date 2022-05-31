@@ -19,14 +19,15 @@ $image-path: '/media/protocol/img';
     }
 }
 
-.mzp-c-hero {
+.mzp-c-call-out.mzp-t-hero {
     padding: 0;
+    background-color: $color-white;
 
-    .mzp-c-hero-title {
+    .mzp-c-call-out-title {
         @include text-title-md;
     }
 
-    .mzp-c-hero-subtitle {
+    .mzp-c-call-out-subtitle {
         @include text-title-xs;
     }
 }
