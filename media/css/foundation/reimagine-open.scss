@@ -9,31 +9,9 @@ $image-path: '/media/protocol/img';
 
 @import '~@mozilla-protocol/core//protocol/css/includes/lib';
 
-.mzp-c-call-out.reimagine-open {
+.mzp-c-call-out.mzp-t-hero {
     background: $color-moz-neon-green url('/media/img/foundation/reimagine-open/bg-header.png') left bottom no-repeat;
     @include background-size(469px, 195px);
-    margin-bottom: $spacing-2xl;
-
-    .mzp-l-content {
-        padding: 48px 24px;
-
-        @media #{$mq-md} {
-            padding: 48px 64px;
-        }
-
-        @media #{$mq-lg} {
-            padding: 96px 80px;
-        }
-    }
-
-    .c-call-out-body {
-        max-width: 580px;
-        margin: 0 auto;
-
-        .mzp-c-call-out-title {
-            @include text-title-lg;
-        }
-    }
 
     .mzp-c-call-out-desc {
         @include text-body-xl;
