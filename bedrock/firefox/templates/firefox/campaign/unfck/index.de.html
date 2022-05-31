@@ -7,7 +7,7 @@
 {% extends "firefox/base/base-protocol.html" %}
 
 {% from "macros.html" import google_play_button with context %}
-{% from "macros-protocol.html" import hero with context %}
+{% from "macros-protocol.html" import hero, call_out with context %}
 {% from "firefox/campaign/unfck/includes/macros.html" import gif, share_item with context %}
 
 {% block page_title %}Unfck the Internet - Aus Liebe zum Web{% endblock %}
@@ -17,6 +17,7 @@
 
 {% block page_css %}
   {{ css_bundle('firefox-unfck-de') }}
+  {{ css_bundle('protocol-call-out')}}
 {% endblock %}
 
 {% block body_id %}firefox-unfck{% endblock %}
@@ -46,13 +47,13 @@
     <div class="c-banner"></div>
   </div>
 
-  {% call hero(
+  {% call call_out(
     title='Unfck the Internet',
-    class='mzp-t-firefox show-default',
+    class='mzp-t-firefox mzp-t-hero unfck-de show-default',
     include_cta=True,
     heading_level=1)
   %}
-    <div class="mzp-c-hero-desc">
+    <div class="mzp-c-call-out-desc">
       <p>Download Firefox: Der Unabhängige browser unterstützt vom non-profit Mozilla</p>
     </div>
     {{ download_firefox(alt_copy='Download Firefox', download_location='primary cta') }}
@@ -67,9 +68,9 @@
     </div>
   {% endcall %}
 
-  {% call hero(
+  {% call call_out(
     title='Danke, Dass Du Firefox Nutzt.',
-    class='mzp-t-firefox show-firefox hide-from-legacy-ie',
+    class='mzp-t-firefox mzp-t-hero show-firefox hide-from-legacy-ie unfck-de',
     include_cta=True,
     heading_level=2)
   %}

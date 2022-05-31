@@ -8,7 +8,6 @@ $font-path: '/media/fonts';
 $image-path: '/media/protocol/img';
 
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
-@import '~@mozilla-protocol/core/protocol/css/components/hero';
 @import '~@mozilla-protocol/core/protocol/css/includes/forms/lib';
 
 // --------------------------------------------------------------------------
@@ -66,7 +65,7 @@ main {
 .t-unfck {
     &,
     & .mzp-c-card-feature-desc,
-    & .mzp-c-hero {
+    & .mzp-c-call-out {
         background-color: #6e40c8;
         color: $color-white;
     }
@@ -305,9 +304,11 @@ main {
 // --------------------------------------------------------------------------
 // Hero
 
-.mzp-c-hero {
-    padding-bottom: 0;
-    padding-top: 0;
+.mzp-c-call-out.mzp-t-hero.unfck-de {
+    .mzp-l-content {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
 
     ul.download-list,
     .mzp-c-button-download-container {
@@ -323,11 +324,6 @@ main {
         }
     }
 
-    .mzp-l-content {
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-
     .c-item-gif {
         width: 280px;
     }
@@ -337,7 +333,7 @@ main {
     }
 
     @media #{$mq-xl} {
-        .mzp-c-hero-body {
+        .mzp-c-call-out-body {
             position: relative;
 
             &::before,
@@ -363,17 +359,17 @@ main {
     }
 }
 
-.mzp-c-hero.show-default {
-    .mzp-c-hero-desc {
+.mzp-c-call-out.show-default {
+    .mzp-c-call-out-desc {
         @include visually-hidden;
     }
 }
 
-.mzp-c-hero-title {
+.mzp-c-call-out-title {
     @include visually-hidden;
 }
 
-.mzp-c-hero-body {
+.mzp-c-call-out-body {
     max-width: $content-md;
 }
 
