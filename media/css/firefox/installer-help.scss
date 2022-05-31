@@ -36,20 +36,11 @@ $image-path: '/media/protocol/img';
     }
 }
 
-.mzp-c-call-out.installer-help-call-out {
+.mzp-c-call-out.mzp-t-hero.installer-call-out {
     background-color: #fff;
-    max-width: 432px;
-    margin: 0 auto $spacing-2xl;
 
-    .mzp-c-call-out-title {
-        @include text-title-md;
-    }
-
-    @media #{$mq-md} {
-        max-width: 580px;
-
-        .mzp-c-call-out-title {
-            @include text-title-lg;
-        }
+    .mzp-l-content {
+        padding-bottom: 48px;
+        padding-top: 0;
     }
 }

@@ -6,7 +6,8 @@ $font-path: '/media/fonts';
 $image-path: '/media/protocol/img';
 
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
-@import '~@mozilla-protocol/core/protocol/css/components/hero';
+@import '~@mozilla-protocol/core/protocol/css/components/logos/logo';
+@import '~@mozilla-protocol/core/protocol/css/components/logos/logo-product-firefox';
 @import '../protocol/components/sub-navigation';
 
 // * -------------------------------------------------------------------------- */
@@ -21,12 +22,8 @@ $image-path: '/media/protocol/img';
 
 // * -------------------------------------------------------------------------- */
 // Hero
-.mzp-c-hero {
+.mzp-c-call-out {
     background-color: $color-marketing-gray-20;
-
-    .mzp-c-hero-desc {
-        margin: 0;
-    }
 }
 
 // * -------------------------------------------------------------------------- */
