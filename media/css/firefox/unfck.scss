@@ -7,7 +7,6 @@ $image-path: '/media/protocol/img';
 
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
 @import '~@mozilla-protocol/core/protocol/css/includes/forms/lib';
-@import '~@mozilla-protocol/core/protocol/css/components/hero';
 
 // --------------------------------------------------------------------------
 // conditional content classes
@@ -159,11 +158,11 @@ main {
     color: $color-white;
 
     & .mzp-c-card-feature-desc,
-    & .mzp-c-hero.mzp-t-dark {
+    & .mzp-c-call-out.mzp-t-dark {
         background-color: transparent;
     }
 
-    & .mzp-c-hero.mzp-t-dark .mzp-c-hero-desc {
+    & .mzp-c-call-out.mzp-t-dark .mzp-c-hero-desc {
         color: $color-white;
     }
 
@@ -318,12 +317,16 @@ main {
     }
 }
 
-.mzp-c-hero {
+.mzp-c-call-out.mzp-t-hero.c-unfck-hero {
     padding-top: 0;
     padding-bottom: 0;
 
-    .mzp-c-hero-desc p {
-        margin-bottom: 0;
+    .mzp-c-call-out-desc {
+        margin-bottom: $spacing-md;
+
+        @media #{$mq-md} {
+            margin-bottom: $spacing-2xl;
+        }
     }
 
     ul.download-list,
@@ -336,7 +339,7 @@ main {
     }
 }
 
-.mzp-c-hero-title {
+.c-unfck-hero &.mzp-c-call-out-title {
     @include visually-hidden;
 }
 

@@ -7,7 +7,7 @@
 {% extends "firefox/base/base-protocol.html" %}
 
 {% from "macros.html" import google_play_button with context %}
-{% from "macros-protocol.html" import call_out, hero with context %}
+{% from "macros-protocol.html" import call_out with context %}
 
 {% block html_attrs %}{{ super() }} {% include 'exp/includes/id.html' %}{% endblock %}
 
@@ -70,14 +70,13 @@
     {% set xl = static('img/firefox/campaign/unfck/en/hero-1062.png') %}
     <img src="{{ md }}" width="531" height="302" srcset="{{ sm }} 320w, {{ md }} 531w, {{ lg }} 640w, {{ xl }} 1062w" alt="">
   </div>
-
-  {% call hero(
+  {% call call_out (
+    class='mzp-t-hero mzp-t-dark c-unfck-hero',
     title='Unfck the internet',
     desc='We love it, we need it, and we can all feel the ways it’s fcked. Together we can unfck it. Start by putting the only non-profit-backed, people-first browser<span class="cc-start"> on your phone</span>.'|safe,
-    class='mzp-t-firefox mzp-t-dark',
     include_cta=True,
-    heading_level=1)
-  %}
+    heading_level=1 )%}
+
     <div class="cc-download">
       {{ download_firefox(download_location='primary cta') }}
     </div>
