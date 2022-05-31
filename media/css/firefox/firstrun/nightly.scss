@@ -13,18 +13,13 @@ main {
     color: $color-white;
 }
 
-.mzp-c-hero.main-header {
+.mzp-c-call-out.mzp-t-hero.main-header {
     background: linear-gradient($color-black, $color-ink-80);
-    padding-bottom: 0;
-
-    .mzp-c-hero-title {
-        background-image: url('#{$image-path}/logos/firefox/browser/nightly/logo.svg');
-        background-size: 80px 80px;
-    }
 
     @media #{$mq-md} {
-        .mzp-c-hero-title {
+        .mzp-c-call-out-title {
             background-size: 160px 160px;
+            margin-bottom: $spacing-xl;
             padding-top: 200px;
         }
     }
