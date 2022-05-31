@@ -321,6 +321,10 @@ main {
     padding-top: 0;
     padding-bottom: 0;
 
+    .mzp-c-call-out-title {
+        @include visually-hidden;
+    }
+
     .mzp-c-call-out-desc {
         margin-bottom: $spacing-md;
 
@@ -337,10 +341,6 @@ main {
     .mobile-download-buttons {
         margin-top: $spacing-lg;
     }
-}
-
-.c-unfck-hero &.mzp-c-call-out-title {
-    @include visually-hidden;
 }
 
 // --------------------------------------------------------------------------
