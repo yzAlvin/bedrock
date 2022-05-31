@@ -8,11 +8,11 @@ $image-path: '/media/protocol/img';
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
 @import '~@mozilla-protocol/core/protocol/css/includes/fonts/metropolis';
 @import '~@mozilla-protocol/core/protocol/css/components/billboard';
-@import '~@mozilla-protocol/core/protocol/css/components/hero';
+@import '~@mozilla-protocol/core/protocol/css/components/logos/wordmark';
+@import '~@mozilla-protocol/core/protocol/css/components/logos/wordmark-product-family';
 
-.mzp-c-hero .c-primary-cta-title {
+.mzp-c-split .mzp-u-title-md {
     @include font-firefox;
-    @include text-title-md;
 }
 
 // * -------------------------------------------------------------------------- */
