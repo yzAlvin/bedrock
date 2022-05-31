@@ -9,7 +9,6 @@ $image-path: '/media/protocol/img';
 @import '~@mozilla-protocol/core/protocol/css/components/forms/form';
 @import '~@mozilla-protocol/core/protocol/css/components/forms/field';
 @import '~@mozilla-protocol/core/protocol/css/components/forms/button-container';
-@import '~@mozilla-protocol/core/protocol/css/components/hero';
 @import '~@mozilla-protocol/core/protocol/css/components/notification-bar';
 
 // * -------------------------------------------------------------------------- */
@@ -26,10 +25,6 @@ h2 {
 
 main {
     min-height: $content-sm;
-}
-
-.mzp-c-hero {
-    padding-bottom: 0;
 }
 
 .mzp-c-form {
