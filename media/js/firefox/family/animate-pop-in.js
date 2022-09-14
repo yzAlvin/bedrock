@@ -38,7 +38,7 @@
                         }
                     });
                 },
-                { rootMargin: '-40px' }
+                { threshold: 0.8 }
             );
 
             // add observers

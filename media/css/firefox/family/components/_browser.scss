@@ -68,6 +68,10 @@
         background-color: f3.$white;
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
+
+        &.mzp-t-dark {
+            background-color: f3.$violet-extra-dark;
+        }
     }
 }
 
@@ -120,23 +124,20 @@
   $duration: 0.5s;
 .animate-pop-in {
     opacity: 0;
-    animation: $duration step-end 0.2s 1 normal forwards running pop-in;
+    animation: $duration step-end 0.3s 1 normal forwards running pop-in;
   }
 
-.t-doomscroll {
-    animation-delay: 0s;
-}
-
 .t-content-container {
-    animation-delay: $duration;
+    animation-delay: calc(#{$duration} * 2);
 }
 
 .t-stop-button-container {
-    animation-delay: calc(#{$duration} * 2);
+    animation-delay: calc(#{$duration} * 3);
 }
 
 // initial impressions:
 // maybe only worthwhile on the mental health section?
+// although problematic on mobile (absolute positioning disrupts threshold trigger?)
 // login form needs a fix for z-index overlap (position rel on blurb)
 // private browsing already gets color switch animation
 // bullying already gets radiating heart animation
