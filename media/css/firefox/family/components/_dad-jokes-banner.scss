@@ -13,7 +13,7 @@
     // related to js show/hide behaviour
     &[aria-hidden='true'] {
         opacity: 0;
-        transition: opacity 100ms;
+        transition: opacity 500ms;
     }
 
     &[aria-hidden='false'] {
@@ -67,11 +67,20 @@
 
             button {
                 flex: 0 0 auto;
+                transition: opacity 0.2s;
+            }
+
+            .container {
+                position: relative;
             }
 
             #dad-jokes-eyeroll {
-                display: none;
+                opacity: 0;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
                 @include text-title-md;
+                transition: opacity 0.1s;
             }
 
             @media #{$mq-md} {
