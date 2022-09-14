@@ -2,6 +2,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+/* stylelint-disable */
+
 @use '../utils' as f3;
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
 
@@ -66,9 +68,76 @@
         background-color: f3.$white;
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
-
-        &.mzp-t-dark {
-            background-color: f3.$violet-extra-dark;
-        }
     }
 }
+
+// if js and no-preference for motion
+@keyframes pop-in {
+    0% {
+      transform: scale(0.25);
+      opacity: 0; /* this has to be on element if js is enabled, then js adds animate class */
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    49% {
+      transform: scale(0.25);
+    }
+
+    50% {
+      transform: scale(0.5);
+    }
+
+
+    74% {
+      transform: scale(0.5);
+    }
+
+    75% {
+      transform: scale(1.1);
+    }
+
+    90% {
+      transform: scale(1.1);
+    }
+
+    99% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .c-browser:not(.t-color-switch) {
+    opacity: 0;
+  }
+
+  $duration: 0.5s;
+.animate-pop-in {
+    opacity: 0;
+    animation: $duration step-end 0.2s 1 normal forwards running pop-in;
+  }
+
+.t-doomscroll {
+    animation-delay: 0s;
+}
+
+.t-content-container {
+    animation-delay: $duration;
+}
+
+.t-stop-button-container {
+    animation-delay: calc(#{$duration} * 2);
+}
+
+// initial impressions:
+// maybe only worthwhile on the mental health section?
+// login form needs a fix for z-index overlap (position rel on blurb)
+// private browsing already gets color switch animation
+// bullying already gets radiating heart animation
+
