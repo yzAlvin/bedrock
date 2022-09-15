@@ -124,7 +124,7 @@
   $duration: 0.5s;
 .animate-pop-in {
     opacity: 0;
-    animation: $duration step-end 0.3s 1 normal forwards running pop-in;
+    animation: $duration step-end 0s 1 normal forwards running pop-in;
   }
 
 .t-content-container {
