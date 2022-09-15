@@ -19,6 +19,7 @@
 
         .c-private-mode-mask {
             $size: 85px;
+            opacity: 0;
             position: absolute;
             top: -20px;
             right: 20px;
@@ -27,6 +28,20 @@
             @media #{$mq-md} {
                 top: 15%;
                 right: -35px;
+            }
+        }
+
+        .c-browser-content.mzp-t-dark {
+            transition-property: color, background-color;
+            transition-delay: 1s;
+            transition-duration: 1s;
+
+            .c-subtitle {
+                transition: color 1s 1s;
+            }
+
+            .c-private-mode-mask {
+                animation: 0.5s step-end 1.5s 1 normal forwards running pop-in;
             }
         }
     }

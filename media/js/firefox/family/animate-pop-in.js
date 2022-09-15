@@ -32,7 +32,22 @@
                         // trigger animation by adding relevant class with animation styles
                         if (entry.isIntersecting) {
                             console.log('intersecting');
+                            var privacyModuleTag = document.querySelector(
+                                "a[href='#private-mode'].c-module-tag"
+                            );
+                            var isPrivateModeSection =
+                                privacyModuleTag.parentNode ===
+                                entry.target.parentNode.parentNode;
+
                             entry.target.classList.add('animate-pop-in');
+                            if (isPrivateModeSection) {
+                                var background =
+                                    entry.target.querySelector(
+                                        '.c-browser-content'
+                                    );
+                                background.classList.add('mzp-t-dark');
+                            }
+
                             // remove observer after triggering animation
                             observer.unobserve(entry.target);
                         }
