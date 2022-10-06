@@ -72,8 +72,9 @@ module.exports = function (config) {
             'tests/unit/spec/products/vpn/invite.js',
             'tests/unit/spec/products/vpn/affiliate-attribution.js',
             'tests/unit/spec/newsletter/form-utils.js',
-            'tests/unit/spec/newsletter/recovery.js',
+            'tests/unit/spec/newsletter/management.js',
             'tests/unit/spec/newsletter/newsletter.js',
+            'tests/unit/spec/newsletter/recovery.js',
             'tests/unit/spec/privacy/data-preferences-cookie.js',
             {
                 pattern: 'node_modules/sinon/pkg/sinon.js',

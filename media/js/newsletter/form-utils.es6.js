@@ -11,7 +11,8 @@ const errorList = {
     COUNTRY_ERROR: 'Country not selected',
     LANGUAGE_ERROR: 'Language not selected',
     PRIVACY_POLICY_ERROR: 'Privacy policy not checked',
-    LEGAL_TERMS_ERROR: 'Terms not checked'
+    LEGAL_TERMS_ERROR: 'Terms not checked',
+    NOT_FOUND: 'Not Found'
 };
 
 /**
