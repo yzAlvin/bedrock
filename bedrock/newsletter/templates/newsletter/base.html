@@ -11,14 +11,8 @@
 {% block page_title %}{{ ftl('newsletters-newsletter-subscriptions') }}{% endblock page_title %}
 
 {% block page_css %}
-  {{ css_bundle('protocol-newsletter') }}
   {{ css_bundle('protocol-emphasis-box') }}
-  {{ css_bundle('protocol-card') }}
-  {{ css_bundle('newsletter') }}
-{% endblock %}
-
-{% block js %}
-  {{ js_bundle('newsletter') }}
+  {{ css_bundle('newsletter-management') }}
 {% endblock %}
 
 {# Don't display an email signup form in the footer of this page, #}
