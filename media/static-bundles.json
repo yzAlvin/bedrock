@@ -1185,8 +1185,6 @@
     },
     {
       "files": [
-        "css/careers/protocol.min.scss",
-        "css/careers/protocol-extra.min.scss",
         "css/careers/careers.scss",
         "css/careers/internships.scss"
       ],
