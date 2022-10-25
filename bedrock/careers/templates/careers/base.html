@@ -6,6 +6,8 @@
 
 {% extends "base-protocol-mozilla.html" %}
 
+{% from "macros-protocol.html" import split with context %}
+
 {% block page_title %}Mozilla Careers — Feel good about your work again{% endblock %}
 {% block page_title_suffix %}{% endblock %}
 
@@ -14,6 +16,7 @@
 {% block page_css %}
   {{ css_bundle('careers') }}
   {{ css_bundle('protocol-card')}}
+  {{ css_bundle('protocol-split')}}
 {% endblock %}
 
 {% block site_js %}
@@ -32,7 +35,7 @@
 {% endblock %}
 
 {% block content %}
-<div id="wrapper" class="mzp-l-content mzp-t-mozilla">
+<div id="wrapper" class="mzp-t-mozilla">
   <main role="main">
     {% block careers_content %}{% endblock %}
   </main>

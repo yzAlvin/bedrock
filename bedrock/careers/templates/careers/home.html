@@ -58,6 +58,25 @@
 {% block careers_content %}
 
 <!-- blog content -->
+
+<section>
+  <header class="c-careers-hero">
+    <div class="c-video-wrapper">
+      <div class="overlay"></div>
+      <video id="background-video" autoplay loop muted>
+        <source src="https://assets.mozilla.net/video/careers/careers-homepage-optimized1.mp4" type="video/mp4">
+      </video>
+      {% call split(
+        block_class='mzp-l-split-center-on-sm-md',
+        media_class='mzp-l-split-h-center',
+        media_include='careers/includes/big-picture-video.html',
+        media_after=True
+        ) %}
+        <h2>hello</h2>
+        {% endcall %}
+      </div>
+  </header>
+</section>
 {% if recent_posts %}
   <section class="mzp-l-card-third">
   {% for post in recent_posts %}
