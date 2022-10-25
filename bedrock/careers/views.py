@@ -31,6 +31,22 @@ class HomeView(L10nTemplateView):
         return context
 
 
+class DiversityView(L10nTemplateView):
+    template_name = "careers/diversity.html"
+
+
+class TeamsView(L10nTemplateView):
+    template_name = "careers/teams.html"
+
+
+class LocationsView(L10nTemplateView):
+    template_name = "careers/locations.html"
+
+
+class LifeAtMozillaView(L10nTemplateView):
+    template_name = "careers/life-at-mozilla.html"
+
+
 class InternshipsView(L10nTemplateView):
     template_name = "careers/internships.html"
 

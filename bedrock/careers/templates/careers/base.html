@@ -11,8 +11,9 @@
 
 {% block page_image %}{{ static('img/careers/moz-m.png') }}{% endblock %}
 
-{% block site_css %}
+{% block page_css %}
   {{ css_bundle('careers') }}
+  {{ css_bundle('protocol-card')}}
 {% endblock %}
 
 {% block site_js %}
@@ -30,20 +31,12 @@
   <link rel="alternate" type="application/rss+xml" href="{{ url('careers.feed') }}" title="Current Mozilla job openings" />
 {% endblock %}
 
-{% block site_header %}
-  {% include "careers/includes/header.html" %}
-{% endblock %}
-
 {% block content %}
 <div id="wrapper" class="mzp-l-content mzp-t-mozilla">
   <main role="main">
     {% block careers_content %}{% endblock %}
   </main>
 </div>
-{% endblock %}
-
-{% block site_footer %}
-  {% include "careers/includes/footer.html" %}
 {% endblock %}
 
 {% block js %}
