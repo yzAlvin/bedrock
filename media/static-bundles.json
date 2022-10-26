@@ -1185,8 +1185,7 @@
     },
     {
       "files": [
-        "css/careers/careers.scss",
-        "css/careers/internships.scss"
+        "css/careers/styles.scss"
       ],
       "name": "careers"
     },

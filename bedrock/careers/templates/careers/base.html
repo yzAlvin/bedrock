@@ -6,7 +6,7 @@
 
 {% extends "base-protocol-mozilla.html" %}
 
-{% from "macros-protocol.html" import split with context %}
+{% from "macros-protocol.html" import split, picto with context %}
 
 {% block page_title %}Mozilla Careers — Feel good about your work again{% endblock %}
 {% block page_title_suffix %}{% endblock %}
@@ -15,8 +15,9 @@
 
 {% block page_css %}
   {{ css_bundle('careers') }}
-  {{ css_bundle('protocol-card')}}
   {{ css_bundle('protocol-split')}}
+  {{ css_bundle('protocol-picto')}}
+  {{ css_bundle('protocol-card')}}
 {% endblock %}
 
 {% block site_js %}

@@ -1,0 +1,107 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../utils' as cp;
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+/* Hero with background video */
+
+.c-careers-hero {
+    position: relative;
+
+    .c-video-wrapper {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .c-background-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .overlay {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.75);
+            pointer-events: none;
+        }
+
+        .mzp-c-split {
+            z-index: 20;
+
+            .mzp-c-split-body {
+                h1,
+                p {
+                    color: $color-white;
+                }
+            }
+
+            .mzp-c-split-media {
+                &::after {
+                    background: url('/media/img/icons/video-play.svg') top left no-repeat;
+                    content: '';
+                    height: 100px;
+                    left: 50%;
+                    margin: -50px 0 0 -50px;
+                    opacity: 0.7;
+                    position: absolute;
+                    top: 50%;
+                    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+                    width: 100px;
+                    z-index: 2;
+                }
+
+                &:hover::after,
+                &:focus::after {
+                    opacity: 1;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+/* Locations */
+
+.locations-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-gap: 30px;
+}
+
+.locations-list a {
+    display: block;
+}
+
+.locations-list img {
+    display: block;
+    margin: 0 auto 10px;
+    transition: transform 0.1s ease-in;
+    width: 95px;
+}
+
+.locations-list a:hover img {
+    transform: scale(1.05) translateY(-6px);
+}
+
+/* $mq-sm in protocol */
+@media only screen and (min-width: 480px) {
+    .locations-list {
+        grid-gap: 70px;
+    }
+}
