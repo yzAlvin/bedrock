@@ -3,12 +3,14 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 @use '../utils' as cp;
+@use 'sass:color';
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
 
 /* Hero with background video */
 
 .c-careers-hero {
     position: relative;
+    margin-bottom: $layout-xl;
 
     .c-video-wrapper {
         position: relative;
@@ -76,8 +78,58 @@
     }
 }
 
+.c-careers-intro,
+.c-careers-values,
+.c-careers-testimonials,
+.c-careers-benefits,
+.c-careers-teams {
+    margin: $layout-xl auto;
+}
+
 .c-careers-testimonials {
-    background-color: cp.$blue-light;
+    // background-color: cp.$blue-light;
+
+    div {
+        .c-careers-testimonials-wrapper {
+            display: grid;
+
+            li {
+                border: 3px solid $color-black;
+                border-radius: 0 0 $border-radius-md $border-radius-md;
+                box-shadow: 10px 10px 0 $color-light-gray-40;
+            }
+
+            @media #{$mq-md} {
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+
+                li:nth-child(1) {
+                    border: 0;
+                    box-shadow: none;
+                    grid-row: 1;
+                    grid-column: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                li:nth-child(2) {
+                    grid-row: 1;
+                    grid-column: 2;
+                }
+
+                li:nth-child(3) {
+                    grid-row: 2;
+                    grid-column: 1;
+                }
+
+                li:nth-child(4) {
+                    grid-row: 3;
+                    grid-column: 2;
+                }
+            }
+        }
+    }
 
     blockquote {
         @include text-title-xs;
@@ -97,6 +149,11 @@
         img {
             height: 120px;
         }
+
+        cite {
+            font-weight: bold;
+            @include text-body-lg;
+        }
     }
 
     @media #{$mq-md} {
@@ -110,9 +167,27 @@
     }
 }
 
-.c-careers-benefits,
-.c-careers-teams {
-    margin: $spacing-2xl auto;
+.c-careers-diversity {
+    background-color: cp.$teal-primary;
+
+    h2,
+    p {
+        color: $color-white;
+    }
+
+    .c-careers-button-wrapper {
+        .mzp-c-button {
+            background-color: cp.$teal-primary;
+            border-color: $color-white;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: color.adjust(cp.$teal-primary, $lightness: -10%);
+                color: $color-white;
+            }
+        }
+    }
 }
 
 /* Locations */
