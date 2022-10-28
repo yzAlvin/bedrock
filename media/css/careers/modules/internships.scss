@@ -11,8 +11,8 @@
 /* Hero */
 .internships-page .mzp-c-hero {
     background:
-    linear-gradient(to right, #000, transparent),
-    url('/media/img/careers/internships/internships-hero-high-res.jpg') center center no-repeat;
+        linear-gradient(to right, #000, transparent),
+        url('/media/img/careers/internships/internships-hero-high-res.jpg') center center no-repeat;
     background-size: cover;
 }
 
@@ -22,17 +22,17 @@
 }
 
 @media
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi){
+    (min-device-pixel-ratio: 1.25),
+    (min-resolution: 120dpi) {
     .internships-page .mzp-c-hero {
         background:
-        linear-gradient(to right, #000, transparent),
-        url('/media/img/careers/internships/internships-hero.jpg') center center no-repeat;
+            linear-gradient(to right, #000, transparent),
+            url('/media/img/careers/internships/internships-hero.jpg') center center no-repeat;
         background-size: cover;
     }
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
     .internships-page .mzp-c-hero {
         background: #20123a;
     }
@@ -69,7 +69,7 @@
     background: #ededf0;
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
     .internships-page .c-section-heading {
         padding: 50px 10px 30px;
     }
@@ -79,7 +79,7 @@
     }
 
     .internships-page .mzp-c-button {
-        margin: 0 0 50px 0;
+        margin: 0 0 50px;
     }
 
     .internships-page .mzp-c-hero-cta .mzp-c-button {

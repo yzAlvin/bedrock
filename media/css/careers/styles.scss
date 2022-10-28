@@ -2,14 +2,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-/* -------------------------------------------------------------------------- */
 
-
-// $font-path: '/media/protocol/fonts';
-// $image-path: '/media/protocol/img';
-
-// @import '~@mozilla-protocol/core/protocol/css/includes/lib';
-
+// @use '../utils' as cp;
 @use './modules/overview.scss';
 @use './modules/diversity.scss';
 @use './modules/teams.scss';
@@ -18,3 +12,20 @@
 @use './modules/benefits.scss';
 @use './modules/job-listings.scss';
 @use './modules/internships.scss';
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+.c-careers {
+    .mzp-l-content {
+        padding-top: $spacing-2xl;
+        padding-bottom: $spacing-2xl;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .c-careers-button-wrapper {
+        text-align: center;
+    }
+}
+

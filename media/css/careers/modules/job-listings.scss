@@ -363,7 +363,8 @@
 }
 
 /* high res images */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
+/* stylelint-ignore-next-line media-feature-name-no-vendor */
+@media only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
     .page-hero {
         background-image: url('/media/img/careers/hero-bg-high-res.jpg');
     }

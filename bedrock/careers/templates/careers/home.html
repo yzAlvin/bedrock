@@ -57,9 +57,7 @@
 
 {% block careers_content %}
 
-<!-- blog content -->
-
-
+<!-- Hero -->
   <header class="c-careers-hero">
     <div class="c-video-wrapper">
       <!-- Overlay div to create an overlay effect for the background video -->
@@ -80,7 +78,6 @@
       </div>
   </header>
 
-
     <div class="mzp-l-content mzp-t-content-md">
       <h2>Feel good about your work</h2>
        <p>
@@ -90,8 +87,10 @@
           Bring your drive, your creativity, your big ideas and your new perspectives to make the difference we’re aiming for.
         </p>
     </div>
-    <section class="c-careers-values">
-      <div class="mzp-l-content mzp-t-content-lg">
+
+    <!-- Values section -->
+    <section class="mzp-l-content c-careers-values">
+      <div class="mzp-l-content mzp-t-content-md">
         <h2>
           Our values bring us together as one team
         </h2>
@@ -99,7 +98,7 @@
           How we work together is as important as what we make together. In 2022, we finalized a yearlong effort to codify what helps our team be its best, and we love where we landed. Our shared operating values drive confident decision-making, boost healthy collaborations and just plain make it easier to get stuff done.
         </p>
       </div>
-      <ul class="mzp-l-content mzp-l-columns mzp-t-columns-four">
+      <ul class="mzp-l-content mzp-l-columns mzp-t-columns-two mzp-t-content-xl">
       {% call picto(
         base_el='li',
         title='We welcome differences',
@@ -146,6 +145,206 @@
       </ul>
     </section>
 
+    <!-- Testimonials section -->
+    <section class="c-careers-testimonials">
+      <div class="mzp-l-content">
+
+
+      <ul class="mzp-l-content mzp-l-columns mzp-t-columns-two">
+        <li>
+          <figure>
+            <blockquote>
+              <span>
+                "I love working at Mozilla because their values align with mine."
+
+              </span>
+            </blockquote>
+            <div class="c-careers-citation-wrapper">
+              <img src="{{ static('img/careers/icons/mozilla-theme/careers-target.svg') }}" alt="">
+              <div class="c-careers-citation">
+                <cite>
+                  — Mozillian One
+                </cite>
+                <p>
+                  Senior developer <br />
+                  Toronto, ON
+                </p>
+              </div>
+            </div>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <blockquote>
+              <span>
+                "I love working at Mozilla because their values align with mine."
+
+              </span>
+            </blockquote>
+            <div class="c-careers-citation-wrapper">
+              <img src="{{ static('img/careers/icons/mozilla-theme/careers-target.svg') }}" alt="">
+              <div class="c-careers-citation">
+                <cite>
+                  — Mozillian Two
+                </cite>
+                <p>
+                  Senior developer <br />
+                  Toronto, ON
+                </p>
+              </div>
+            </div>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <blockquote>
+              <span>
+                "I love working at Mozilla because their values align with mine."
+
+              </span>
+            </blockquote>
+            <div class="c-careers-citation-wrapper">
+              <img src="{{ static('img/careers/icons/mozilla-theme/careers-target.svg') }}" alt="">
+              <div class="c-careers-citation">
+                <cite>
+                  — Mozillian Three
+                </cite>
+                <p>
+                  Senior developer <br />
+                  Toronto, ON
+                </p>
+              </div>
+            </div>
+          </figure>
+        </li>
+      </ul>
+      </div>
+    </section>
+
+    <!-- Benefits section -->
+    <section class="c-careers-benefits">
+      <div class="mzp-l-content mzp-t-content-md">
+        <h2>
+          Benefits for real life
+        </h2>
+        <p>
+          Our benefits package is world class. To us, offering a comprehensive, industry-leading health and wellbeing program to our employees and their families is plain common sense, and the right thing to do. We also believe it’s easier to focus on our work when we’re feeling well.
+        </p>
+      </div>
+      <ul class="mzp-l-content mzp-l-columns mzp-t-columns-two mzp-t-content-xl">
+      {% call picto(
+        base_el='li',
+        title='Health and wellness',
+        image_url='protocol/img/icons/brand/orange/speedometer.svg',
+        body=True,
+      ) %}
+        <p>
+          Mozilla covers medical, dental and vision plan premiums at 100%. Our offerings give you the options you need to manage your health — and your family’s — the way you want.
+        </p>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Mental health',
+        image_url='protocol/img/icons/brand/orange/feature-extensions-puzzle.svg',
+        body=True,
+      ) %}
+        <p>
+          Mental health is as important as our physical health. That’s why Mozilla’s health benefits include therapy and coaching sessions to make sure our people have access to the care they need.
+        </p>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Time away',
+        image_url='protocol/img/icons/brand/orange/feature-extensions-puzzle.svg',
+        body=True,
+      ) %}
+        <p>
+          Time away from work to disconnect and recharge is essential. In addition to country-specific holidays (12 in the U.S.), employees start accruing vacation and sick leave on day one (specifics vary by country). Plus, everyone enjoys quarterly all-company wellness days and the most personal holiday of all: your birthday.
+        </p>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Parental leave',
+        image_url='protocol/img/icons/brand/orange/feature-extensions-puzzle.svg',
+        body=True,
+      ) %}
+        <p>
+          While Mozilla’s parental leave policies vary globally, our U.S.-based employees can look forward to 26 weeks of paid leave for childbearing parents and 12 weeks of paid leave for non-childbearing parents.
+        </p>
+      {% endcall %}
+      </ul>
+      <div class="c-careers-button-wrapper">
+        <a href="{{ url('careers.benefits') }}" class="mzp-c-button mzp-t-secondary">Read more about our benefits</a>
+      </div>
+    </section>
+
+    <!-- Teams section -->
+      <section class="c-careers-teams">
+      <div class="mzp-l-content mzp-t-content-md">
+        <h2>
+          Meet our teams
+        </h2>
+        <p>
+          Mozilla is a global community of technologists, thinkers and builders working together to keep the internet healthy, safer and accessible — while shipping beloved products to people all over the world.
+        </p>
+        <p>
+          Meet a few of our teams who are making it happen.
+        </p>
+      </div>
+      <ul class="mzp-l-content mzp-l-columns mzp-t-columns-two mzp-t-content-xl">
+      {% call picto(
+        base_el='li',
+        title='Product Engineering',
+        image_url='protocol/img/icons/brand/orange/speedometer.svg',
+        body=True,
+      ) %}
+        <p>
+          Our engineers work on some of the most interesting challenges facing the internet today — privacy, security, decentralization, access, convenience, compatibility and more — all to continue building an internet that serves as a global public resource, open and accessible to all.
+        </p>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Data Organization',
+        image_url='protocol/img/icons/brand/orange/feature-extensions-puzzle.svg',
+        body=True,
+      ) %}
+        <p>
+          Mozilla’s Data team is at the forefront of how to use mountains of data to guide business and product decisions while respecting the privacy and security of our users. Data team members have a deep knowledge of data processing infrastructure, a thorough understanding of the business and market, and astute statistical and modeling expertise.
+        </p>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Marketing',
+        image_url='protocol/img/icons/brand/orange/feature-extensions-puzzle.svg',
+        body=True,
+      ) %}
+        <p>
+          Mozilla's Marketing team has the exciting role of sharing our company vision and our innovative, privacy-forward products with the world through creative storytelling.
+        </p>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Other team',
+        image_url='protocol/img/icons/brand/orange/feature-extensions-puzzle.svg',
+        body=True,
+      ) %}
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo iure, impedit corporis incidunt consequatur repudiandae illo fugiat amet optio libero porro mollitia expedita repellendus, dolore voluptatem distinctio tempore iste placeat? Iste incidunt voluptatum at ea.
+        </p>
+      {% endcall %}
+      </ul>
+      <div class="c-careers-button-wrapper">
+        <a href="{{ url('careers.benefits') }}" class="mzp-c-button mzp-t-secondary">View all teams</a>
+      </div>
+    </section>
+
+<!-- blog content -->
 {% if recent_posts %}
   <section class="mzp-l-card-third mzp-l-content">
   {% for post in recent_posts %}

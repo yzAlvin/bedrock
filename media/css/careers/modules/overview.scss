@@ -12,7 +12,7 @@
 
     .c-video-wrapper {
         position: relative;
-        height: 80vh;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -74,6 +74,45 @@
             }
         }
     }
+}
+
+.c-careers-testimonials {
+    background-color: cp.$blue-light;
+
+    blockquote {
+        @include text-title-xs;
+
+        span {
+            background: $color-black;
+            color: $color-white;
+            line-height: 1.4;
+        }
+    }
+
+    .c-careers-citation-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            height: 120px;
+        }
+    }
+
+    @media #{$mq-md} {
+        .c-careers-citation-wrapper {
+            flex-direction: row;
+
+            img {
+                margin-right: $spacing-2xl;
+            }
+        }
+    }
+}
+
+.c-careers-benefits,
+.c-careers-teams {
+    margin: $spacing-2xl auto;
 }
 
 /* Locations */
