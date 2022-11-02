@@ -41,7 +41,13 @@
     {% block careers_content %}{% endblock %}
   </main>
 </div>
+
+  {% block careers_bottom %}
+    {% include "careers/includes/footer.html" %}
+  {% endblock %}
+
 {% endblock %}
+
 
 {% block js %}
   <script src="{{ static('js/careers/libs/protocol-navigation.min.js') }}"></script>

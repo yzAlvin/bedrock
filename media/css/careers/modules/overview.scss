@@ -10,7 +10,6 @@
 
 .c-careers-hero {
     position: relative;
-    margin-bottom: $layout-xl;
 
     .c-video-wrapper {
         position: relative;
@@ -78,11 +77,12 @@
     }
 }
 
-.c-careers-intro,
-.c-careers-values,
-.c-careers-testimonials,
-.c-careers-benefits,
-.c-careers-teams {
+.c-careers-intro {
+    background-color: cp.$teal-primary;
+    padding: $layout-lg 0;
+}
+
+.c-overview-page-section {
     margin: $layout-xl auto;
 }
 
@@ -169,25 +169,7 @@
 
 .c-careers-diversity {
     background-color: cp.$teal-primary;
-
-    h2,
-    p {
-        color: $color-white;
-    }
-
-    .c-careers-button-wrapper {
-        .mzp-c-button {
-            background-color: cp.$teal-primary;
-            border-color: $color-white;
-
-            &:hover,
-            &:active,
-            &:focus {
-                background-color: color.adjust(cp.$teal-primary, $lightness: -10%);
-                color: $color-white;
-            }
-        }
-    }
+    padding: $layout-lg 0;
 }
 
 /* Locations */

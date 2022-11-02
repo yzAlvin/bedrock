@@ -3,4 +3,11 @@
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 @use '../utils' as cp;
+@use 'sass:color';
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+.c-careers-diversity-numbers {
+    .mzp-c-picto-heading {
+        @include text-title-xl;
+    }
+}

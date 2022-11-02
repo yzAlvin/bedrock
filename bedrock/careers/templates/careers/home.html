@@ -79,7 +79,6 @@
   </header>
 
   <section class="c-careers-intro">
-
     <div class="mzp-l-content mzp-t-content-md">
       <h2>Feel good about your work</h2>
       <p>
@@ -92,7 +91,7 @@
   </section>
 
     <!-- Values section -->
-    <section class="mzp-l-content c-careers-values">
+    <section class=" c-careers-values c-overview-page-section">
       <div class="mzp-l-content mzp-t-content-md">
         <h2>
           Our values bring us together as one team
@@ -149,7 +148,7 @@
     </section>
 
     <!-- Testimonials section -->
-    <section class="c-careers-testimonials">
+    <section class="c-careers-testimonials c-overview-page-section">
       <div class="mzp-l-content">
         <ul class="mzp-l-content mzp-l-columns mzp-t-columns-two c-careers-testimonials-wrapper">
           <li>
@@ -225,7 +224,7 @@
     </section>
 
     <!-- Benefits section -->
-    <section class="c-careers-benefits">
+    <section class="c-careers-benefits c-overview-page-section">
       <div class="mzp-l-content mzp-t-content-md">
         <h2>
           Benefits for real life
@@ -285,7 +284,7 @@
     </section>
 
     <!-- Teams section -->
-      <section class="c-careers-teams">
+      <section class="c-careers-teams c-overview-page-section">
       <div class="mzp-l-content mzp-t-content-md">
         <h2>
           Meet our teams
@@ -347,7 +346,7 @@
       </div>
     </section>
 
-    <section class="c-careers-diversity">
+    <section class="c-careers-diversity c-overview-page-section">
       <div class="mzp-l-content mzp-t-content-md">
         <h2>
           Diversity and Inclusion
@@ -359,58 +358,58 @@
           We’ve made some progress that we’re proud of, and we also have a lot more work to do.
         </p>
         <div class="c-careers-button-wrapper">
-          <a href="{{ url('careers.diversity') }}" class="mzp-c-button mzp-t-secondary-dark">Read more</a>
+          <a href="{{ url('careers.diversity') }}" class="mzp-c-button mzp-t-secondary">Read more</a>
         </div>
       </div>
     </section>
 
     <!-- office locations -->
-<!-- <section class="mzp-l-content centered locations" id="locations">
-  <div class="mzp-c-call-out">
-    <div class="mzp-l-content">
-      <h2 class="mzp-c-call-out-title">A global view</h2>
-      <p class="mzp-c-call-out-desc">
-        With offices all over the world, we consider the internet from multiple cultures
-        and contexts.
-      </p>
+  <!-- <section class="mzp-l-content centered locations" id="locations">
+    <div class="mzp-c-call-out">
+      <div class="mzp-l-content">
+        <h2 class="mzp-c-call-out-title">A global view</h2>
+        <p class="mzp-c-call-out-desc">
+          With offices all over the world, we consider the internet from multiple cultures
+          and contexts.
+        </p>
+      </div>
     </div>
-  </div>
 
-  <ul class="locations-list">
-    <li>
-      <a href="{{ url('mozorg.contact.spaces.san-francisco') }}">
-        <img src="{{ static('img/careers/locations/san-francisco.png') }}" srcset="{{ static('img/careers/locations/san-francisco-high-res.png') }}" alt="Illustration representing the city of San Francisco" />
-        San Francisco
-      </a>
-    </li>
-    <li>
-      <a href="{{ url('mozorg.contact.spaces.berlin') }}">
-        <img src="{{ static('img/careers/locations/berlin.png') }}" srcset="{{ static('img/careers/locations/berlin-high-res.png') }}" alt="Illustration representing the city of Berlin" />
-        Berlin
-      </a>
-    </li>
-    <li>
-      <a href="{{ url('mozorg.contact.spaces.toronto') }}">
-        <img src="{{ static('img/careers/locations/toronto.png') }}" srcset="{{ static('img/careers/locations/toronto-high-res.png') }}" alt="Illustration representing the city of Toronto" />
-        Toronto
-      </a>
-    </li>
-    <li>
-      <a href="{{ url('mozorg.contact.spaces.paris') }}">
-        <img src="{{ static('img/careers/locations/paris.png') }}" srcset="{{ static('img/careers/locations/paris-high-res.png') }}" alt="Illustration representing the city of Paris" />
-        Paris
-      </a>
-    </li>
-    <li>
-      <img src="{{ static('img/careers/locations/remote.png') }}" srcset="{{ static('img/careers/locations/remote-high-res.png') }}" alt="Illustration representing the desk of remote office workers" />
-      Remote
-    </li>
-  </ul>
-</section> -->
+    <ul class="locations-list">
+      <li>
+        <a href="{{ url('mozorg.contact.spaces.san-francisco') }}">
+          <img src="{{ static('img/careers/locations/mozilla-san-francisco.svg') }}" alt="Illustration representing the city of San Francisco" />
+          San Francisco
+        </a>
+      </li>
+      <li>
+        <a href="{{ url('mozorg.contact.spaces.berlin') }}">
+          <img src="{{ static('img/careers/locations/mozilla-berlin.svg') }}" alt="Illustration representing the city of Berlin" />
+          Berlin
+        </a>
+      </li>
+      <li>
+        <a href="{{ url('mozorg.contact.spaces.toronto') }}">
+          <img src="{{ static('img/careers/locations/mozilla-toronto.svg') }}" alt="Illustration representing the city of Toronto" />
+          Toronto
+        </a>
+      </li>
+      <li>
+        <a href="{{ url('mozorg.contact.spaces.paris') }}">
+          <img src="{{ static('img/careers/locations/mozilla-paris.svg') }}" alt="Illustration representing the city of Paris" />
+          Paris
+        </a>
+      </li>
+      <li>
+        <img src="{{ static('img/careers/locations/mozilla-remote.svg') }}" alt="Illustration representing the desk of remote office workers" />
+        Remote
+      </li>
+    </ul>
+  </section> -->
 
 <!-- blog content -->
-<hr />
-  <section class="c-careers-blog">
+
+  <section class="c-careers-blog c-overview-page-section">
     <div class="mzp-l-content mzp-t-content-md">
       <h2>
         Life@Mozilla
@@ -460,7 +459,7 @@
       </div>
     {% endif %}
   </section>
-<!-- end blog content -->
 
+<!-- end blog content -->
 
 {% endblock %}
