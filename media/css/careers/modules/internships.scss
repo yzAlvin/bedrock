@@ -22,7 +22,7 @@
 }
 
 @media
-    (min-device-pixel-ratio: 1.25),
+    #{$mq-high-res},
     (min-resolution: 120dpi) {
     .internships-page .mzp-c-hero {
         background:

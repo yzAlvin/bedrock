@@ -43,10 +43,6 @@ class LocationsView(L10nTemplateView):
     template_name = "careers/locations.html"
 
 
-class LifeAtMozillaView(L10nTemplateView):
-    template_name = "careers/life-at-mozilla.html"
-
-
 class InternshipsView(L10nTemplateView):
     template_name = "careers/internships.html"
 

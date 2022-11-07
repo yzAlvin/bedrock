@@ -4,9 +4,7 @@
 
 /* -------------------------------------------------------------------------- */
 
-/* Global */
-
-/* utility classes */
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
 
 .centered {
     text-align: center;
@@ -364,7 +362,7 @@
 
 /* high res images */
 /* stylelint-ignore-next-line media-feature-name-no-vendor */
-@media only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
+@media #{$mq-high-res} {
     .page-hero {
         background-image: url('/media/img/careers/hero-bg-high-res.jpg');
     }

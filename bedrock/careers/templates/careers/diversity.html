@@ -9,18 +9,18 @@
 {% block careers_content %}
 
 <!-- Hero -->
-  <header class="c-careers-hero">
+  <header class="c-careers-video-hero">
     <div class="c-video-wrapper">
       <!-- Overlay div to create an overlay effect for the background video -->
       <div class="overlay"></div>
       <video class="c-background-video" autoplay loop muted>
-        <source src="https://assets.mozilla.net/video/careers/careers-homepage-optimized1.mp4" type="video/mp4">
+        <source src="https://assets.mozilla.net/video/careers/careers-diversity-page-video.mp4" type="video/mp4">
       </video>
       {% call split(
         block_class='mzp-l-split-center-on-sm-md',
         media_class='mzp-l-split-h-center',
-        media_include='careers/includes/big-picture-video.html',
-        image_url='img/careers/careers-video-thumbnail.webp',
+        media_include='careers/includes/diversity-video.html',
+        image_url='img/careers/diversity-video-thumbnail.webp',
         media_after=True
         ) %}
         <h1>Diversity & inclusion at Mozilla</h1>
@@ -29,6 +29,7 @@
       </div>
   </header>
 
+  <!-- Diversity intro -->
   <section class="c-careers-intro">
     <div class="mzp-l-content mzp-t-content-md">
       <h2>Belong where you work</h2>
@@ -38,6 +39,7 @@
     </div>
   </section>
 
+  <!-- Metrics -->
   <section class="c-careers-diversity-numbers c-overview-page-section">
     <div class="mzp-l-content mzp-t-content-md">
       <h2>By the numbers</h2>
@@ -74,6 +76,7 @@
     </ul>
   </section>
 
+  <!-- MRGs quotes -->
   <section class="c-careers-diversity-mrg c-overview-page-section">
     <div class="mzp-l-content mzp-t-content-md">
       <h2>
@@ -89,28 +92,113 @@
         title='Afrozilla',
         body=True,
       ) %}
-        <p>
-          “Being a part of this group has challenged me to not just carry things on my own or pretend they don’t exist, and to show up more fully as an advocate myself.”
-        </p>
+        <blockquote>
+          <p>
+            “Being a part of this group has challenged me to not just carry things on my own or pretend they don’t exist, and to show up more fully as an advocate myself.”
+          </p>
+          <div class="c-diversity-citation">
+            <cite>Tina Rattliff</cite>
+            <p>Lifecycle Marketing Manager</p>
+          </div>
+        </blockquote>
       {% endcall %}
+
       {% call picto(
         base_el='li',
         title='Disability@',
         body=True,
       ) %}
-        <p>
-          “One value we included in our charter is that ableism is unacceptable and will not be tolerated. But it’s immediately followed by another value: We make space for growth, and we expect to make, and learn from, mistakes.”
-        </p>
+        <blockquote>
+          <p>
+            “One value we included in our charter is that ableism is unacceptable and will not be tolerated. But it’s immediately followed by another value: We make space for growth, and we expect to make, and learn from, mistakes.”
+          </p>
+          <div class="c-diversity-citation">
+            <cite>Kim Bryant</cite>
+            <p>Head of Operations for Rally</p>
+          </div>
+        </blockquote>
       {% endcall %}
+
       {% call picto(
         base_el='li',
         title='Latin Pride',
         body=True,
       ) %}
-        <p>
-          “The more Latinx people we hire, the stronger and more dynamic Latin Pride will be. I want our members to use their voices not just within our group, but throughout all of Mozilla.”
-        </p>
+        <blockquote>
+          <p>
+            “The more Latinx people we hire, the stronger and more dynamic Latin Pride will be. I want our members to use their voices not just within our group, but throughout all of Mozilla.”
+          </p>
+          <div class="c-diversity-citation">
+            <cite>Solana Larsen</cite>
+            <p>Editor, Internet Health Report</p>
+          </div>
+        </blockquote>
       {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Mozilla API',
+        body=True,
+      ) %}
+        <blockquote>
+          <p>
+            “Our discussions have been so powerful. There’s often a tension, especially in East Asian cultures with roots in Confucianism, between speaking up and keeping a sort of stiff upper lip. So it’s good to have a forum where we can say — and our allies can hear — the things we’re usually quiet about.”
+          </p>
+          <div class="c-diversity-citation">
+            <cite>Julie Hollek</cite>
+            <p>Senior Manager, Data Science, Business & Metrics</p>
+          </div>
+        </blockquote>
+      {% endcall %}
+
+        {% call picto(
+        base_el='li',
+        title='Pridezilla',
+        body=True,
+      ) %}
+        <blockquote>
+          <p>
+            “Pridezilla is important not only for Mozillians who are LGBTQ, but for all of us to better understand our colleagues from different walks of life. We’re a resource for anyone who wants to learn.”
+          </p>
+          <div class="c-diversity-citation">
+            <cite>Damiano DeMonte</cite>
+            <p>Senior Communications Manager</p>
+          </div>
+        </blockquote>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='WoMoz',
+        body=True,
+      ) %}
+        <blockquote>
+          <p>
+            “I’ve also enjoyed being able to connect with other women at the company. Mozilla is so distributed — and I live in a very remote part of Canada and don’t have many opportunities to see people in person — so I especially appreciate having a place where I can chat with people who might have some similar experiences to me, and who I can learn from.”
+          </p>
+          <div class="c-diversity-citation">
+            <cite>Elgin-Skye McLaren</cite>
+            <p>Hubs Senior Product Manager</p>
+          </div>
+        </blockquote>
+      {% endcall %}
+
+      {% call picto(
+        base_el='li',
+        title='Yallazilla',
+        body=True,
+      ) %}
+        <blockquote>
+          <p>
+            Yallazilla is our newest MRG, and provides a space where employees from the SWANA region feel supported, and connected to the work at Mozilla.
+          </p>
+          <div class="c-diversity-citation">
+            <cite>Yallazillian</cite>
+            <p>Senior developer for Firefox</p>
+          </div>
+        </blockquote>
+      {% endcall %}
+
     </ul>
   </section>
 

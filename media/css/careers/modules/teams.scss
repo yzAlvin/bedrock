@@ -4,3 +4,22 @@
 
 @use '../utils' as cp;
 @import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+.c-careers-text-hero {
+    background-color: cp.$teal-primary;
+    padding: $layout-xl 0;
+
+    .c-text-hero-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .c-text-hero-title {
+            width: 50%;
+        }
+
+        .c-text-hero-body {
+            width: 50%;
+        }
+    }
+}

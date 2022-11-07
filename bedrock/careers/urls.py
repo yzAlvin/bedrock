@@ -21,7 +21,6 @@ urlpatterns = [
     path("diversity/", views.DiversityView.as_view(), name="careers.diversity"),
     path("teams/", views.TeamsView.as_view(), name="careers.teams"),
     path("locations/", views.LocationsView.as_view(), name="careers.locations"),
-    path("life-at-mozilla/", views.LifeAtMozillaView.as_view(), name="careers.life-at-mozilla"),
 ]
 
 

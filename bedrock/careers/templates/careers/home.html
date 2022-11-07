@@ -38,11 +38,6 @@
     'cta_name': "Mozilla office locations"
   },
   {
-    'text': "Life at Mozilla",
-    'href': url('careers.life-at-mozilla'),
-    'cta_name': "Life at Mozilla"
-  },
-  {
     'text': "Benefits",
     'href': url('careers.benefits'),
     'cta_name': "Mozilla benefits"
@@ -58,7 +53,7 @@
 {% block careers_content %}
 
 <!-- Hero -->
-  <header class="c-careers-hero">
+  <header class="c-careers-video-hero">
     <div class="c-video-wrapper">
       <!-- Overlay div to create an overlay effect for the background video -->
       <div class="overlay"></div>
@@ -91,7 +86,7 @@
   </section>
 
     <!-- Values section -->
-    <section class=" c-careers-values c-overview-page-section">
+    <section class="c-careers-values c-overview-page-section">
       <div class="mzp-l-content mzp-t-content-md">
         <h2>
           Our values bring us together as one team
@@ -332,12 +327,12 @@
 
       {% call picto(
         base_el='li',
-        title='Other team',
-        image_url='protocol/img/icons/brand/orange/feature-extensions-puzzle.svg',
+        title='Innovation',
+        image_url='img/careers/icons/mozilla-theme/careers-connection.svg',
         body=True,
       ) %}
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo iure, impedit corporis incidunt consequatur repudiandae illo fugiat amet optio libero porro mollitia expedita repellendus, dolore voluptatem distinctio tempore iste placeat? Iste incidunt voluptatum at ea.
+          With an experimental mindset at its core, our innovation team is out in front, quickly identifying, building and testing product concepts that engage, influence and drive impact within the web ecosystem.
         </p>
       {% endcall %}
       </ul>
@@ -364,48 +359,67 @@
     </section>
 
     <!-- office locations -->
-  <!-- <section class="mzp-l-content centered locations" id="locations">
-    <div class="mzp-c-call-out">
-      <div class="mzp-l-content">
-        <h2 class="mzp-c-call-out-title">A global view</h2>
-        <p class="mzp-c-call-out-desc">
-          With offices all over the world, we consider the internet from multiple cultures
-          and contexts.
-        </p>
-      </div>
+  <section class="c-careers-locations c-overview-page-section">
+    <div class="mzp-l-content mzp-t-content-md">
+        <h2>We'll meet you where you're at</h2>
+
+
+        <p>Mozilla is a remote-first company. Relying on our years of experience in working asynchronously around the world, we’re reimaging what work can look like — balancing your life with the connection and community essential to the products we’re building.</p>
+
+        <div class="mzp-c-video">
+          <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/_EeFDE5WW0I" title="Mozillians, kids, and pets on Zoom" frameborder="0" allowfullscreen>
+            <p><a href="https://www.youtube.com/watch?v=_EeFDE5WW0I&t">Watch the video</a></p>
+          </iframe>
+        </div>
     </div>
 
-    <ul class="locations-list">
+    <ul class="mzp-l-content c-careers-locations-list">
       <li>
         <a href="{{ url('mozorg.contact.spaces.san-francisco') }}">
-          <img src="{{ static('img/careers/locations/mozilla-san-francisco.svg') }}" alt="Illustration representing the city of San Francisco" />
+          <div class="c-careers-locations-image-wrapper">
+            <img src="{{ static('img/careers/locations/mozilla-san-francisco.png') }}" alt="Illustration representing the city of San Francisco" />
+          </div>
           San Francisco
         </a>
       </li>
       <li>
         <a href="{{ url('mozorg.contact.spaces.berlin') }}">
-          <img src="{{ static('img/careers/locations/mozilla-berlin.svg') }}" alt="Illustration representing the city of Berlin" />
+          <div class="c-careers-locations-image-wrapper">
+            <img src="{{ static('img/careers/locations/mozilla-berlin.png') }}" alt="Illustration representing the city of Berlin" />
+          </div>
           Berlin
         </a>
       </li>
       <li>
         <a href="{{ url('mozorg.contact.spaces.toronto') }}">
-          <img src="{{ static('img/careers/locations/mozilla-toronto.svg') }}" alt="Illustration representing the city of Toronto" />
+          <div class="c-careers-locations-image-wrapper">
+            <img src="{{ static('img/careers/locations/mozilla-toronto.png') }}" alt="Illustration representing the city of Toronto" />
+          </div>
           Toronto
         </a>
       </li>
       <li>
         <a href="{{ url('mozorg.contact.spaces.paris') }}">
-          <img src="{{ static('img/careers/locations/mozilla-paris.svg') }}" alt="Illustration representing the city of Paris" />
+          <div class="c-careers-locations-image-wrapper">
+            <img src="{{ static('img/careers/locations/mozilla-paris.png') }}" alt="Illustration representing the city of Paris" />
+          </div>
           Paris
         </a>
       </li>
       <li>
-        <img src="{{ static('img/careers/locations/mozilla-remote.svg') }}" alt="Illustration representing the desk of remote office workers" />
-        Remote
+        <div class="c-careers-locations-image-wrapper">
+          <img src="{{ static('img/careers/locations/mozilla-remote.png') }}" alt="Illustration representing the desk of remote office workers" />
+        </div>
+        <span>
+          Remote
+        </span>
       </li>
     </ul>
-  </section> -->
+
+    <div class="c-careers-button-wrapper">
+      <a href="{{ url('careers.locations') }}" class="mzp-c-button mzp-t-secondary">Read more about the future of work at Mozilla</a>
+    </div>
+  </section>
 
 <!-- blog content -->
 
