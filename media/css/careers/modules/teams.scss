@@ -13,13 +13,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
-        .c-text-hero-title {
-            width: 50%;
-        }
-
-        .c-text-hero-body {
-            width: 50%;
-        }
+        flex-direction: column;
+        text-align: center;
     }
 }

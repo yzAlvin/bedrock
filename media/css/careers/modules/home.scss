@@ -176,65 +176,11 @@
 
 .c-careers-locations {
     .mzp-c-video {
-        margin-top: $spacing-2xl;
+        margin: $spacing-2xl 0;
 
         iframe {
             display: block;
             margin: 0 auto;
         }
-    }
-}
-
-.c-careers-locations-list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: $spacing-2xl 0;
-
-    li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-
-        a,
-        span {
-            @include font-mozilla;
-            @include text-body-xl;
-            font-weight: bold;
-        }
-
-        a {
-            text-decoration: none;
-            transition: 200ms;
-
-            &:hover,
-            &:focus,
-            &:active {
-                transform: scale(1.05) translateY(-6px);
-            }
-        }
-    }
-
-    .c-careers-locations-image-wrapper {
-        width: 200px;
-
-        // margin-right: 20;
-        img {
-            width: 100%;
-        }
-    }
-}
-
-// .locations-list a {
-// display: block;
-// }
-
-/* $mq-sm in protocol */
-@media only screen and (min-width: 480px) {
-    .locations-list {
-        // grid-gap: 70px;
     }
 }

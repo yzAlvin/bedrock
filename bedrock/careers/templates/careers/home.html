@@ -23,9 +23,9 @@
     'cta_name': "Careers overview"
   },
   {
-    'text': "Diversity & Inclusion",
-    'href': url('careers.diversity'),
-    'cta_name': "Mozilla Diversity and inclusion"
+    'text': "Benefits",
+    'href': url('careers.benefits'),
+    'cta_name': "Mozilla benefits"
   },
   {
     'text': "Teams",
@@ -33,9 +33,9 @@
     'cta_name': "Mozilla teams"
   },
   {
-    'text': "Benefits",
-    'href': url('careers.benefits'),
-    'cta_name': "Mozilla benefits"
+    'text': "Diversity & Inclusion",
+    'href': url('careers.diversity'),
+    'cta_name': "Mozilla Diversity and inclusion"
   },
   {
     'text': "Locations",
@@ -67,7 +67,7 @@
         image_url='img/careers/careers-video-thumbnail.webp',
         media_after=True
         ) %}
-        <h1>Good work that does you good.</h1>
+        <h1>Good work that does you good</h1>
         <a href="{{ url('careers.listings') }}" class="mzp-c-button mzp-t-product">Find your role at Mozilla</a>
         {% endcall %}
       </div>
@@ -77,7 +77,7 @@
     <div class="mzp-l-content mzp-t-content-md">
       <h2>Feel good about your work</h2>
       <p>
-        Mozilla has big ambitions for the next decade to build impactful products that are different — that have more respect for the individuals using them, that operate with a different business model, and that explore new forms of openness. It’s going to take hard work that Mozilla is uniquely suited to take on. It’s why we’re here. It’s who we are. And it’s our future.
+        Mozilla has big ambitions for the next decade to build impactful products that are <em>different</em> — that have more respect for the individuals using them, that operate with a different business model, and that explore new forms of openness. It’s going to take hard work that Mozilla is uniquely suited to take on. It’s why we’re here. It’s who we are. And it’s our future.
       </p>
       <p>
         Bring your drive, your creativity, your big ideas and your new perspectives to make the difference we’re aiming for.
@@ -361,7 +361,7 @@
     <!-- office locations -->
   <section class="c-careers-locations c-overview-page-section">
     <div class="mzp-l-content mzp-t-content-md">
-        <h2>We'll meet you where you're at</h2>
+        <h2>We'll meet you where you are</h2>
 
 
         <p>Mozilla is a remote-first company. Relying on our years of experience in working asynchronously around the world, we’re reimaging what work can look like — balancing your life with the connection and community essential to the products we’re building.</p>
@@ -372,49 +372,6 @@
           </iframe>
         </div>
     </div>
-
-    <ul class="mzp-l-content c-careers-locations-list">
-      <li>
-        <a href="{{ url('mozorg.contact.spaces.san-francisco') }}">
-          <div class="c-careers-locations-image-wrapper">
-            <img src="{{ static('img/careers/locations/mozilla-san-francisco.png') }}" alt="Illustration representing the city of San Francisco" />
-          </div>
-          San Francisco
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('mozorg.contact.spaces.berlin') }}">
-          <div class="c-careers-locations-image-wrapper">
-            <img src="{{ static('img/careers/locations/mozilla-berlin.png') }}" alt="Illustration representing the city of Berlin" />
-          </div>
-          Berlin
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('mozorg.contact.spaces.toronto') }}">
-          <div class="c-careers-locations-image-wrapper">
-            <img src="{{ static('img/careers/locations/mozilla-toronto.png') }}" alt="Illustration representing the city of Toronto" />
-          </div>
-          Toronto
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('mozorg.contact.spaces.paris') }}">
-          <div class="c-careers-locations-image-wrapper">
-            <img src="{{ static('img/careers/locations/mozilla-paris.png') }}" alt="Illustration representing the city of Paris" />
-          </div>
-          Paris
-        </a>
-      </li>
-      <li>
-        <div class="c-careers-locations-image-wrapper">
-          <img src="{{ static('img/careers/locations/mozilla-remote.png') }}" alt="Illustration representing the desk of remote office workers" />
-        </div>
-        <span>
-          Remote
-        </span>
-      </li>
-    </ul>
 
     <div class="c-careers-button-wrapper">
       <a href="{{ url('careers.locations') }}" class="mzp-c-button mzp-t-secondary">Read more about the future of work at Mozilla</a>
