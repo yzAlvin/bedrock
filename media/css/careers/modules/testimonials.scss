@@ -1,0 +1,105 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+@use '../utils' as cp;
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+
+.c-careers-testimonials {
+    // background-color: cp.$blue-light;
+
+    // Hide pull quotes section if JS is disabled
+    &.no-js-hidden {
+        .no-js & {
+            @include hidden;
+        }
+    }
+
+    div {
+        .c-careers-testimonials-wrapper {
+            display: grid;
+
+            @media #{$mq-md} {
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+
+                // li:nth-child(1) {
+                //     border: 0;
+                //     box-shadow: none;
+                //     grid-row: 1;
+                //     grid-column: 1;
+                //     display: flex;
+                //     align-items: center;
+                //     justify-content: center;
+                // }
+
+                // li:nth-child(2) {
+                //     grid-row: 1;
+                //     grid-column: 2;
+                // }
+
+                // li:nth-child(3) {
+                //     grid-row: 2;
+                //     grid-column: 1;
+                // }
+
+                // li:nth-child(4) {
+                //     grid-row: 3;
+                //     grid-column: 2;
+                // }
+            }
+        }
+    }
+
+    blockquote {
+        @include text-title-xs;
+
+        span {
+            background: $color-black;
+            color: $color-white;
+            line-height: 1.4;
+        }
+    }
+
+    .c-careers-citation-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            height: 120px;
+        }
+
+        cite {
+            font-weight: bold;
+            @include text-body-lg;
+        }
+    }
+
+    @media #{$mq-md} {
+        .c-careers-citation-wrapper {
+            flex-direction: row;
+
+            img {
+                margin-right: $spacing-2xl;
+            }
+        }
+    }
+}
+
+.c-careers-full-testimonials {
+    // Hide full testimonials if JS is enabled
+    .js-modal-content {
+        .js & {
+            @include hidden;
+        }
+    }
+
+    .c-careers-testimonials-modal {
+        @include font-base;
+        @include text-body-sm;
+        border: 3px solid $color-black;
+        border-radius: 0 0 $border-radius-md $border-radius-md;
+        box-shadow: 10px 10px 0 $color-light-gray-40;
+    }
+}
