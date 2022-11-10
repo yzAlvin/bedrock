@@ -68,7 +68,7 @@
         media_after=True
         ) %}
         <h1>Good work that does you good</h1>
-        <a href="{{ url('careers.listings') }}" class="mzp-c-button mzp-t-product">Find your role at Mozilla</a>
+        <a href="{{ url('careers.listings') }}" data-cta-tytpe="button" data-cta-name="careers-listings" class="mzp-c-button mzp-t-product">Find your role at Mozilla</a>
         {% endcall %}
       </div>
   </header>
@@ -201,7 +201,7 @@
       {% endcall %}
       </ul>
       <div class="c-careers-button-wrapper">
-        <a href="{{ url('careers.benefits') }}" class="mzp-c-button mzp-t-secondary">Read more about our benefits</a>
+        <a href="{{ url('careers.benefits') }}" data-cta-type="button" data-cta-name="careers benefits" class="mzp-c-button mzp-t-secondary">Read more about our benefits</a>
       </div>
     </section>
 
@@ -264,7 +264,7 @@
       {% endcall %}
       </ul>
       <div class="c-careers-button-wrapper">
-        <a href="{{ url('careers.benefits') }}" class="mzp-c-button mzp-t-secondary">View all teams</a>
+        <a href="{{ url('careers.benefits') }}" data-cta-type="button" data-cta-name="careers benefits" class="mzp-c-button mzp-t-secondary">View all teams</a>
       </div>
     </section>
 
@@ -280,7 +280,7 @@
           We’ve made some progress that we’re proud of, and we also have a lot more work to do.
         </p>
         <div class="c-careers-button-wrapper">
-          <a href="{{ url('careers.diversity') }}" class="mzp-c-button mzp-t-secondary">Read more</a>
+          <a href="{{ url('careers.diversity') }}" data-cta-type="button" data-cta-name="careers diversity"class="mzp-c-button mzp-t-secondary">Read more</a>
         </div>
       </div>
     </section>
@@ -301,7 +301,7 @@
     </div>
 
     <div class="c-careers-button-wrapper">
-      <a href="{{ url('careers.locations') }}" class="mzp-c-button mzp-t-secondary">Read more about the future of work at Mozilla</a>
+      <a href="{{ url('careers.locations') }}" data-cta-type="button" data-cta-name="careers locations"class="mzp-c-button mzp-t-secondary">Read more about the future of work at Mozilla</a>
     </div>
   </section>
 
@@ -321,7 +321,7 @@
       <div class="mzp-l-card-third mzp-l-content">
       {% for post in recent_posts %}
         <div class="mzp-c-card mzp-c-card-medium mzp-has-aspect-16-9">
-          <a href="{{ post.link }}" class="mzp-c-card-block-link">
+          <a href="{{ post.link }}" data-cta-type="button" data-cta-name="{{ post.title }}" class="mzp-c-card-block-link">
             <div class="mzp-c-card-media-wrapper">
               <div class="lazy-image-container">
                 <img src="{{ post.get_featured_image_url('post-large')|default(static('img/careers/blog-fallback.png'), true) }}" alt="{{ post.title }}" class="mzp-c-card-image" />
@@ -338,7 +338,7 @@
       {% endfor %}
       {% if featured_post %}
         <div class="mzp-c-card mzp-c-card-medium mzp-has-aspect-16-9">
-          <a href="{{ featured_post.link }}" class="mzp-c-card-block-link">
+          <a href="{{ featured_post.link }}" data-cta-type="button" data-cta-name="featured post - {{ featured_post.title }}" class="mzp-c-card-block-link">
             <div class="mzp-c-card-media-wrapper">
               <div class="lazy-image-container">
                 <img src="{{ featured_post.image|default(static('img/careers/blog-fallback.png'), true) }}" class="mzp-c-card-image" />
