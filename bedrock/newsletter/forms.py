@@ -138,10 +138,10 @@ class ManageSubscriptionsForm(forms.Form):
 
     def __init__(self, locale, *args, **kwargs):
         regions_dict = product_details.get_regions(locale)
-        regions = sorted(iter(regions_dict.items()), key=itemgetter(1))
-        regions.insert(0, ("", ftl_lazy("newsletter-form-select-country-or-region", fallback="newsletter-form-select-country")))
-        lang_choices = get_lang_choices()
-        lang_choices.insert(0, ("", ftl_lazy("newsletter-form-available-languages")))
+        regions = [("", ftl_lazy("newsletter-form-select-country-or-region", fallback="newsletter-form-select-country"))] + sorted(
+            iter(regions_dict.items()), key=itemgetter(1)
+        )
+        lang_choices = [("", ftl_lazy("newsletter-form-available-languages"))] + get_lang_choices()
         super().__init__(*args, **kwargs)
         self.fields["country"].choices = regions
         self.fields["lang"].choices = lang_choices
