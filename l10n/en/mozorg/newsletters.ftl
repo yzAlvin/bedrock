@@ -416,5 +416,5 @@ knowledge-is-power-firefox = { -brand-name-firefox } browser
 knowledge-is-power-vpn = { -brand-name-mozilla-vpn }
 knowledge-is-power-pocket = { -brand-name-pocket }
 
-# Out of data browser message for newsletter management page.
+# Out of date browser message for newsletter management page.
 newsletters-update-your-browser = Your web browser needs to be updated in order to use this page.

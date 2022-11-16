@@ -132,9 +132,7 @@ const NewsletterManagementForm = {
             document.querySelectorAll(
                 '.newsletter-table .newsletter-checkbox:checked'
             )
-        ).map((newsletter) => {
-            return `${newsletter.value}`;
-        });
+        ).map((newsletter) => newsletter.value);
     },
 
     /**
@@ -168,10 +166,7 @@ const NewsletterManagementForm = {
      */
     isFxALocale: (locale) => {
         const loc = locale.includes('-') ? locale.split('-')[0] : locale;
-
-        return FXA_NEWSLETTERS_LOCALES.reduce((prev, current) => {
-            return loc === current ? true : prev;
-        }, false);
+        return FXA_NEWSLETTERS_LOCALES.includes(loc);
     },
 
     /**
