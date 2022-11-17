@@ -10,11 +10,6 @@
 
 {% block page_title %}{{ ftl('newsletters-newsletter-subscriptions') }}{% endblock page_title %}
 
-{% block page_css %}
-  {{ css_bundle('protocol-emphasis-box') }}
-  {{ css_bundle('newsletter-management') }}
-{% endblock %}
-
 {# Don't display an email signup form in the footer of this page, #}
 {# it would be redundant. #}
 {% block email_form %}{% endblock %}
