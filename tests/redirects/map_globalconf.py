@@ -1207,6 +1207,6 @@ URLS = flatten(
         ),
         # Issue 11991
         url_test("/transparency/", "/about/policy/transparency/"),
-        url_test("/careers/internships/", "/careers/"),
+        url_test("/careers/internships/", "/careers/", status_code=requests.codes.found),
     )
 )
